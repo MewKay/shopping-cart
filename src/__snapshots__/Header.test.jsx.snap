@@ -7,7 +7,9 @@ exports[`Header component > renders the brand name and the nav links 1`] = `
       My Shop App
     </h1>
     <nav>
-      <a>
+      <a
+        href="/"
+      >
         Home
       </a>
       <a>

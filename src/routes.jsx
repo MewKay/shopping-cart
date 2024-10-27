@@ -1,9 +1,11 @@
-import App from "./App";
+import Home from "./Home";
+import Layout from "./Layout";
 
 const routes = [
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
+    children: [{ index: true, element: <Home /> }],
   },
 ];
 

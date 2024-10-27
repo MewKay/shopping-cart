@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Header = function createHeaderComponent({ itemNumber = 0 }) {
   return (
     <header>
       <h1>My Shop App</h1>
       <nav>
-        <a>Home</a>
+        <Link to={"/"}>Home</Link>
         <a>Store</a>
         <a>Cart({itemNumber})</a>
       </nav>
