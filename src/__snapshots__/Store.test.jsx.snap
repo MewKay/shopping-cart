@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Store component > renders correctly 1`] = `
+<div>
+  <div>
+    <h2>
+      View Our Products
+    </h2>
+    <div>
+      <a
+        href="/men's clothing"
+      >
+        Men's Clothing
+      </a>
+      <a
+        href="/women's clothing"
+      >
+        Women's Clothing
+      </a>
+      <a
+        href="/electronics"
+      >
+        Electronics
+      </a>
+      <a
+        href="/jewelery"
+      >
+        Jewelery
+      </a>
+    </div>
+    <a
+      href="/all"
+    >
+      View All
+    </a>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Home component > renders welcome title, store description and going to store button 1`] = `
+exports[`Home component > renders welcome title, store description and going to store link 1`] = `
 <div>
   <h2>
     Welcome to our store!
@@ -8,8 +8,10 @@ exports[`Home component > renders welcome title, store description and going to 
   <p>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus autem itaque corporis vitae id vero quaerat possimus nisi neque alias?
   </p>
-  <button>
+  <a
+    href="/store"
+  >
     Go to store
-  </button>
+  </a>
 </div>
 `;

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = function createHomeComponent() {
   return (
     <>
@@ -6,7 +8,7 @@ const Home = function createHomeComponent() {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus autem
         itaque corporis vitae id vero quaerat possimus nisi neque alias?
       </p>
-      <button>Go to store</button>
+      <Link to={"store"}>Go to store</Link>
     </>
   );
 };

@@ -7,7 +7,7 @@ const Header = function createHeaderComponent({ itemNumber = 0 }) {
       <h1>My Shop App</h1>
       <nav>
         <Link to={"/"}>Home</Link>
-        <a>Store</a>
+        <Link to={"store"}>Store</Link>
         <a>Cart({itemNumber})</a>
       </nav>
     </header>
