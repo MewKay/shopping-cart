@@ -7,6 +7,12 @@ const Products = () => {
   const { category } = useParams();
   const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
+  const [searchedProduct, setSearchedProduct] = useState("");
+  const searchedPattern = new RegExp(searchedProduct, "i");
+  const filteredProductList = productList.filter((product) =>
+    searchedPattern.test(product.title)
+  );
+  const isThereNoProducts = filteredProductList.length <= 0;
 
   useEffect(() => {
     const updateProductList = async function putFetchedDataToProductList() {
@@ -20,6 +26,10 @@ const Products = () => {
 
     updateProductList();
   }, [category]);
+
+  const handleSearchChange = (e) => {
+    setSearchedProduct(e.target.value);
+  };
 
   return (
     <div>
@@ -63,12 +73,26 @@ const Products = () => {
             </button>
           </li>
         </ul>
+        <input
+          id="search-product"
+          type="text"
+          placeholder="Search for a product..."
+          value={searchedProduct}
+          onChange={handleSearchChange}
+        />
       </div>
-      <ul>
-        {productList.map((product) => (
-          <ProductCard key={product.id} title={product.title} />
-        ))}
-      </ul>
+      {isThereNoProducts ? (
+        <p>
+          Sorry, no products match your search. Please try adjusting your
+          filters or search terms.
+        </p>
+      ) : (
+        <ul>
+          {filteredProductList.map((product) => (
+            <ProductCard key={product.id} title={product.title} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
