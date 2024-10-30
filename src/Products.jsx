@@ -31,6 +31,8 @@ const Products = () => {
     setSearchedProduct(e.target.value);
   };
 
+  const handleCardClick = () => {};
+
   return (
     <div>
       <div className="product-list-header">
@@ -88,8 +90,15 @@ const Products = () => {
         </p>
       ) : (
         <ul>
-          {filteredProductList.map((product) => (
-            <ProductCard key={product.id} title={product.title} />
+          {filteredProductList.map((product, index) => (
+            <ProductCard
+              key={product.id}
+              imgURL={product.image}
+              title={product.title}
+              price={product.price}
+              indexToShow={index}
+              onClick={handleCardClick}
+            />
           ))}
         </ul>
       )}

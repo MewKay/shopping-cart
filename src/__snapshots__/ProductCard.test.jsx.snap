@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductCard component > renders correctly 1`] = `
+<div>
+  <button>
+    <div
+      class="product-image"
+    >
+      <img
+        alt=""
+        src="https://image.placeholder.com/product"
+      />
+    </div>
+    <p>
+      Product 0
+    </p>
+    <p>
+      $
+      50
+    </p>
+  </button>
+</div>
+`;
