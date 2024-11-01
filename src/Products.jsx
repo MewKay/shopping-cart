@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import fetchProducts from "./fetchProducts";
 import { useNavigate, useParams } from "react-router-dom";
+import ActiveProduct from "./ActiveProduct";
 
 const Products = () => {
   const { category } = useParams();
   const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
   const [searchedProduct, setSearchedProduct] = useState("");
+  const [activeProduct, setActiveProduct] = useState(null);
+
   const searchedPattern = new RegExp(searchedProduct, "i");
   const filteredProductList = productList.filter((product) =>
     searchedPattern.test(product.title)
@@ -31,10 +34,24 @@ const Products = () => {
     setSearchedProduct(e.target.value);
   };
 
-  const handleCardClick = () => {};
+  const handleCardClick = (indexToShow) => {
+    setActiveProduct(filteredProductList[indexToShow]);
+  };
+
+  const handleAddToCart = () => {};
+  const handleRemoveActive = () => {
+    setActiveProduct(null);
+  };
 
   return (
     <div>
+      {activeProduct && (
+        <ActiveProduct
+          product={activeProduct}
+          onAddToCart={handleAddToCart}
+          onRemoveActiveProduct={handleRemoveActive}
+        />
+      )}
       <div className="product-list-header">
         <ul className="product-category-filter">
           <li>

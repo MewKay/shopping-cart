@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ActiveProduct component > renders correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <img
+        alt=""
+        src="https://image.placeholder.com/product"
+      />
+    </div>
+    <div>
+      <h3>
+        Product 0
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam asperiores minus dolores cumque corporis vel dolorem atque non reiciendis.
+      </p>
+      <p>
+        $
+        50
+      </p>
+      <div>
+        <button
+          aria-label="Increase quantity"
+        >
+          +
+        </button>
+        <input
+          aria-label="Quantity value"
+          type="number"
+          value="0"
+        />
+        <button
+          aria-label="Decrease quantity"
+        >
+          -
+        </button>
+      </div>
+    </div>
+    <div>
+      <button>
+        Add to cart
+      </button>
+    </div>
+    <button
+      aria-label="Close selected product"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;

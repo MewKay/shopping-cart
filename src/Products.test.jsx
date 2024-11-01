@@ -39,9 +39,7 @@ const assertProductsLength = async function assertProductCardsLengthByCategory(
   const filterButton = screen.getByRole("button", {
     name: categoryFilter,
   });
-
   await user.click(filterButton);
-
   const productCardList = await screen.findAllByText(/Product \d/i);
 
   expect(productCardList).toHaveLength(expectedLength);
@@ -55,7 +53,6 @@ const assertProductsTitle = async function assertProductCardsTitleByCategory(
   const filterButton = screen.getByRole("button", {
     name: categoryFilter,
   });
-
   await user.click(filterButton);
 
   for (const expectedTitle of expectedTitles) {
