@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Cart component > renders correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <header>
+        <h2>
+          Your Shopping Cart
+        </h2>
+      </header>
+      <ul>
+        <li>
+          Product Details
+        </li>
+        <li>
+          Quantity
+        </li>
+        <li>
+          Price
+        </li>
+        <li>
+          Total
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
