@@ -11,6 +11,7 @@ const Products = () => {
   const [searchedProduct, setSearchedProduct] = useState("");
   const [activeProduct, setActiveProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const searchedPattern = new RegExp(searchedProduct, "i");
   const filteredProductList = productList.filter((product) =>
@@ -24,8 +25,10 @@ const Products = () => {
       try {
         const updatedProductList = await fetchProducts(category);
         setProductList(updatedProductList);
+        setError(null);
       } catch (error) {
-        console.error(error);
+        setError(error.message);
+        setProductList([]);
       } finally {
         setLoading(false);
       }
@@ -106,6 +109,8 @@ const Products = () => {
       </div>
       {loading ? (
         <p>Loading...</p>
+      ) : error ? (
+        <p>Failed to load products. Please try again later.</p>
       ) : isThereNoProducts ? (
         <p>
           Sorry, no products match your search. Please try adjusting your

@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes";
+import fetchProducts from "./fetchProducts";
 
 vi.mock("./fetchProducts", () => ({
   default: vi.fn((category) => {
@@ -70,6 +71,21 @@ describe("Products Component", () => {
 
     const loadingMessage = screen.getByText("Loading...");
     expect(loadingMessage).toBeInTheDocument();
+  });
+
+  it("should display an error message when a problem occured", async () => {
+    fetchProducts.mockImplementationOnce(() => {
+      throw new Error("This is an error");
+    });
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/store/all"],
+    });
+    render(<RouterProvider router={router} />);
+
+    const errorMessage = await screen.findByText(
+      "Failed to load products. Please try again later."
+    );
+    expect(errorMessage).toBeInTheDocument();
   });
 
   describe("Category filters Product Card lists", () => {
