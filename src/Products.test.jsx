@@ -62,6 +62,16 @@ const assertProductsTitle = async function assertProductCardsTitleByCategory(
 };
 
 describe("Products Component", () => {
+  it("should display a loading message by default", () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/store/all"],
+    });
+    render(<RouterProvider router={router} />);
+
+    const loadingMessage = screen.getByText("Loading...");
+    expect(loadingMessage).toBeInTheDocument();
+  });
+
   describe("Category filters Product Card lists", () => {
     it.each([
       {

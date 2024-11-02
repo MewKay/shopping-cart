@@ -10,6 +10,7 @@ const Products = () => {
   const [productList, setProductList] = useState([]);
   const [searchedProduct, setSearchedProduct] = useState("");
   const [activeProduct, setActiveProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const searchedPattern = new RegExp(searchedProduct, "i");
   const filteredProductList = productList.filter((product) =>
@@ -19,11 +20,14 @@ const Products = () => {
 
   useEffect(() => {
     const updateProductList = async function putFetchedDataToProductList() {
+      setLoading(true);
       try {
         const updatedProductList = await fetchProducts(category);
         setProductList(updatedProductList);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -100,7 +104,9 @@ const Products = () => {
           onChange={handleSearchChange}
         />
       </div>
-      {isThereNoProducts ? (
+      {loading ? (
+        <p>Loading...</p>
+      ) : isThereNoProducts ? (
         <p>
           Sorry, no products match your search. Please try adjusting your
           filters or search terms.
