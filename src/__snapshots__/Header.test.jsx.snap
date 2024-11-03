@@ -17,11 +17,11 @@ exports[`Header component > renders the brand name and the nav links 1`] = `
       >
         Store
       </a>
-      <a>
+      <button>
         Cart(
         0
         )
-      </a>
+      </button>
     </nav>
   </header>
 </div>
