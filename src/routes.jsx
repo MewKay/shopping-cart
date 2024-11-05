@@ -1,4 +1,3 @@
-import { element } from "prop-types";
 import Home from "./Home";
 import Layout from "./Layout";
 import Products from "./Products";

@@ -45,7 +45,6 @@ const Products = () => {
     setActiveProduct(filteredProductList[indexToShow]);
   };
 
-  const handleAddToCart = () => {};
   const handleRemoveActive = () => {
     setActiveProduct(null);
   };
@@ -55,7 +54,6 @@ const Products = () => {
       {activeProduct && (
         <ActiveProduct
           product={activeProduct}
-          onAddToCart={handleAddToCart}
           onRemoveActiveProduct={handleRemoveActive}
         />
       )}

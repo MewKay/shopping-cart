@@ -28,8 +28,9 @@ exports[`ActiveProduct component > renders correctly 1`] = `
         </button>
         <input
           aria-label="Quantity value"
+          min="1"
           type="number"
-          value="0"
+          value="1"
         />
         <button
           aria-label="Decrease quantity"

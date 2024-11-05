@@ -12,6 +12,7 @@ const Layout = () => {
       (previousTotal, currentQuantity) => previousTotal + currentQuantity,
       defaultTotalQuantity
     );
+
   return (
     <>
       <Header totalQuantity={totalQuantity} />

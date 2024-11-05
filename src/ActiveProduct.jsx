@@ -1,12 +1,49 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
-const ActiveProduct = ({ product, onAddToCart, onRemoveActiveProduct }) => {
-  const [productQuantity, setProductQuantity] = useState(0);
+const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
+  const { cart, setCart } = useOutletContext();
+  const [productQuantity, setProductQuantity] = useState(1);
   const { id, title, image, description, price } = product;
 
-  const handleIncreaseQuantity = () => setProductQuantity((value) => value + 1);
-  const handleDecreaseQuantity = () => setProductQuantity((value) => value - 1);
+  const handleIncreaseQuantity = () =>
+    !productQuantity
+      ? setProductQuantity(1)
+      : setProductQuantity((value) => Number.parseInt(value + 1));
+
+  const handleDecreaseQuantity = () =>
+    productQuantity <= 1 || !productQuantity
+      ? setProductQuantity(1)
+      : setProductQuantity((value) => Number.parseInt(value - 1));
+
+  const handleTypeQuantity = (e) => {
+    const typedValue = e.target.value;
+    setProductQuantity(typedValue);
+  };
+
+  const handleAddItemToCart = () => {
+    const newCart = structuredClone(cart);
+    const indexItemToAdd = newCart.findIndex(
+      (cartItem) => cartItem.productDetails.id === id
+    );
+
+    if (indexItemToAdd >= 0) {
+      newCart[indexItemToAdd].quantity += productQuantity;
+    } else {
+      newCart.push({
+        productDetails: product,
+        quantity: productQuantity,
+      });
+    }
+
+    setCart(newCart);
+  };
+
+  const handleCloseSelectedItem = () => {
+    onRemoveActiveProduct();
+    setProductQuantity(1);
+  };
 
   return (
     <div>
@@ -27,8 +64,9 @@ const ActiveProduct = ({ product, onAddToCart, onRemoveActiveProduct }) => {
           <input
             aria-label="Quantity value"
             type="number"
+            min={1}
             value={productQuantity}
-            onChange={(e) => setProductQuantity(e.target.value)}
+            onChange={handleTypeQuantity}
           />
           <button
             aria-label="Decrease quantity"
@@ -39,11 +77,11 @@ const ActiveProduct = ({ product, onAddToCart, onRemoveActiveProduct }) => {
         </div>
       </div>
       <div>
-        <button onClick={onAddToCart}>Add to cart</button>
+        <button onClick={handleAddItemToCart}>Add to cart</button>
       </div>
       <button
         aria-label="Close selected product"
-        onClick={onRemoveActiveProduct}
+        onClick={handleCloseSelectedItem}
       >
         x
       </button>
@@ -59,7 +97,6 @@ ActiveProduct.propTypes = {
     description: PropTypes.string,
     price: PropTypes.number,
   }).isRequired,
-  onAddToCart: PropTypes.func.isRequired,
   onRemoveActiveProduct: PropTypes.func.isRequired,
 };
 
