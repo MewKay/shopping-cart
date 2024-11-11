@@ -8,6 +8,10 @@ exports[`Cart component > renders correctly 1`] = `
         <h2>
           Your Shopping Cart
         </h2>
+        <p>
+          3
+           items
+        </p>
       </header>
       <ul>
         <li>

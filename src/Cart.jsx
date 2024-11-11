@@ -1,9 +1,14 @@
+import { useOutletContext } from "react-router-dom";
+
 const Cart = () => {
+  const { itemNumber } = useOutletContext();
+
   return (
     <div>
       <div>
         <header>
           <h2>Your Shopping Cart</h2>
+          <p>{itemNumber} items</p>
         </header>
         <ul>
           <li>Product Details</li>
