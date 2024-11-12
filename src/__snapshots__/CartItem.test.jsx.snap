@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartItem component > renders correctly 1`] = `
+<div>
+  <li>
+    <div>
+      <div>
+        <img
+          alt=""
+          src="https://image.placeholder.com/product"
+        />
+        <div>
+          <p>
+            Product 0
+          </p>
+          <p>
+            Category: 
+            jewelery
+          </p>
+        </div>
+      </div>
+      <div>
+        <button>
+          +
+        </button>
+        <input
+          value="4"
+        />
+        <button>
+          -
+        </button>
+      </div>
+      <div>
+        $
+        50
+      </div>
+      <div>
+        $
+        200
+      </div>
+    </div>
+    <button>
+      X
+    </button>
+  </li>
+</div>
+`;
