@@ -10,7 +10,10 @@ exports[`CartModal component > renders correctly 1`] = `
         x
       </button>
       <div>
-        Your cart contains 5 items
+        Your cart contains 
+        10
+         item
+        s
       </div>
       <div>
         <div>
@@ -18,7 +21,8 @@ exports[`CartModal component > renders correctly 1`] = `
             Order Subtotal
           </p>
           <p>
-            $659.00
+            $
+            352.45
           </p>
         </div>
         <a
@@ -26,6 +30,7 @@ exports[`CartModal component > renders correctly 1`] = `
         >
           View or Edit Your Cart
         </a>
+        <ul />
       </div>
     </div>
   </div>
