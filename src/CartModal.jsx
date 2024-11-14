@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import CartModalItem from "./CartModalItem";
 
 const CartModal = ({
   totalQuantity,
@@ -23,7 +24,17 @@ const CartModal = ({
             <p>${orderSubtotal}</p>
           </div>
           <Link to={"/store/cart"}>View or Edit Your Cart</Link>
-          <ul></ul>
+          <ul>
+            {cart.map((item) => (
+              <CartModalItem
+                key={item.productDetails.id}
+                image={item.productDetails.image}
+                title={item.productDetails.title}
+                price={item.productDetails.price}
+                quantity={item.quantity}
+              />
+            ))}
+          </ul>
         </div>
       </div>
     </div>

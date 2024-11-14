@@ -30,7 +30,38 @@ exports[`CartModal component > renders correctly 1`] = `
         >
           View or Edit Your Cart
         </a>
-        <ul />
+        <ul>
+          <li>
+            <img
+              alt=""
+              src="https://image.placeholder.com/product"
+            />
+            <p>
+              Product 0
+            </p>
+            <p>
+              49.5
+            </p>
+            <p>
+              5
+            </p>
+          </li>
+          <li>
+            <img
+              alt=""
+              src="https://image.placeholder.com/product"
+            />
+            <p>
+              Product 1
+            </p>
+            <p>
+              20.99
+            </p>
+            <p>
+              5
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

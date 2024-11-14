@@ -4,6 +4,17 @@ import { screen, render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import CartModal from "./CartModal";
 
+vi.mock("./CartModalItem", () => ({
+  default: ({ image, title, price, quantity }) => (
+    <li>
+      <img src={image} alt="" />
+      <p>{title}</p>
+      <p>{price}</p>
+      <p>{quantity}</p>
+    </li>
+  ),
+}));
+
 //Component props
 const totalQuantity = 10;
 const orderSubtotal = 352.45;
