@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartModal component > renders correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <button
+        aria-label="Close cart preview"
+      >
+        x
+      </button>
+      <div>
+        Your cart contains 5 items
+      </div>
+      <div>
+        <div>
+          <p>
+            Order Subtotal
+          </p>
+          <p>
+            $659.00
+          </p>
+        </div>
+        <a
+          href="/store/cart"
+        >
+          View or Edit Your Cart
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
