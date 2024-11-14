@@ -3,7 +3,7 @@ import routes from "./routes";
 
 const router = createBrowserRouter(routes);
 
-const App = function createApp() {
+const App = () => {
   return <RouterProvider router={router} />;
 };
 
