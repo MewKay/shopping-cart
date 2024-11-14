@@ -31,7 +31,9 @@ const Layout = () => {
         totalQuantity={totalQuantity}
         handleShowCartModal={handleShowCartModal}
       />
-      <Outlet context={{ cart, setCart, itemNumber, totalQuantity }} />
+      <Outlet
+        context={{ cart, setCart, itemNumber, totalQuantity, orderSubtotal }}
+      />
       {showCartModal && (
         <CartModal
           totalQuantity={totalQuantity}

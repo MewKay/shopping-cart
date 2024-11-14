@@ -10,7 +10,8 @@ exports[`Cart component > renders correctly 1`] = `
         </h2>
         <p>
           3
-           items
+           item
+          s
         </p>
       </header>
       <ul>
@@ -27,6 +28,97 @@ exports[`Cart component > renders correctly 1`] = `
           Total
         </li>
       </ul>
+      <ul>
+        <li>
+          <img
+            alt=""
+            src="https://image.placeholder.com/product"
+          />
+          <p>
+            Product 0
+          </p>
+          <p />
+          <p>
+            49.5
+          </p>
+          <p>
+            5
+          </p>
+          <p>
+            247.5
+          </p>
+        </li>
+        <li>
+          <img
+            alt=""
+            src="https://image.placeholder.com/product"
+          />
+          <p>
+            Product 1
+          </p>
+          <p />
+          <p>
+            20.99
+          </p>
+          <p>
+            5
+          </p>
+          <p>
+            104.94999999999999
+          </p>
+        </li>
+      </ul>
+      <a
+        href="/store/all"
+      >
+        &lt;-- Continue Shopping
+      </a>
+    </div>
+    <div>
+      <div>
+        <h3>
+          Order Summary
+        </h3>
+        <div>
+          <p>
+            Subtotal:
+          </p>
+          <p>
+            $
+            352.45
+          </p>
+        </div>
+        <div>
+          <p>
+            Delivery:
+          </p>
+          <p>
+            $
+            0
+          </p>
+        </div>
+        <div>
+          <p>
+            Discount:
+          </p>
+          <p>
+            $
+            0
+          </p>
+        </div>
+        <div>
+          <p>
+            Total:
+          </p>
+          <p>
+            $
+            352.45
+          </p>
+        </div>
+        <button>
+          CHECKOUT
+        </button>
+      </div>
     </div>
   </div>
 </div>

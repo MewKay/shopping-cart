@@ -9,6 +9,7 @@ const CartModal = ({
   handleHideCartModal,
 }) => {
   const itemPlural = totalQuantity > 1 && "s";
+
   return (
     <div>
       <div>
