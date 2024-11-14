@@ -15,12 +15,17 @@ const Layout = () => {
       (previousTotal, currentQuantity) => previousTotal + currentQuantity,
       defaultTotalQuantity
     );
-  const orderSubtotal = cart
+  const nonFormattedOrderSubtotal = cart
     .map((item) => item.quantity * item.productDetails.price)
     .reduce(
       (previousSubtotal, currentSubtotal) => previousSubtotal + currentSubtotal,
       defaultSubtotal
     );
+
+  //Will format the number to always have 2 decimal places
+  const orderSubtotal = Number(
+    Math.round(nonFormattedOrderSubtotal + "e2") + "e-2"
+  );
 
   const handleShowCartModal = () => setShowCartModal(true);
   const handleHideCartModal = () => setShowCartModal(false);

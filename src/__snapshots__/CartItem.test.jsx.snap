@@ -20,13 +20,20 @@ exports[`CartItem component > renders correctly 1`] = `
         </div>
       </div>
       <div>
-        <button>
+        <button
+          aria-label="Increase quantity"
+        >
           +
         </button>
         <input
+          aria-label="Quantity value"
+          min="1"
+          type="number"
           value="4"
         />
-        <button>
+        <button
+          aria-label="Decrease quantity"
+        >
           -
         </button>
       </div>
@@ -39,7 +46,9 @@ exports[`CartItem component > renders correctly 1`] = `
         200
       </div>
     </div>
-    <button>
+    <button
+      aria-label="Remove item from cart"
+    >
       X
     </button>
   </li>

@@ -24,8 +24,12 @@ const Cart = () => {
           <li>Total</li>
         </ul>
         <ul>
-          {cart.map((item) => (
-            <CartItem key={item.productDetails.id} cartItem={item} />
+          {cart.map((item, index) => (
+            <CartItem
+              key={item.productDetails.id}
+              cartItem={item}
+              cartItemIndex={index}
+            />
           ))}
         </ul>
         <Link to={"/store/all"}>{"<-- Continue Shopping"}</Link>

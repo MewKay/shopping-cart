@@ -10,12 +10,12 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
   const handleIncreaseQuantity = () =>
     !productQuantity
       ? setProductQuantity(1)
-      : setProductQuantity((value) => Number.parseInt(value + 1));
+      : setProductQuantity((value) => Number.parseInt(value) + 1);
 
   const handleDecreaseQuantity = () =>
     productQuantity <= 1 || !productQuantity
       ? setProductQuantity(1)
-      : setProductQuantity((value) => Number.parseInt(value - 1));
+      : setProductQuantity((value) => Number.parseInt(value) - 1);
 
   const handleTypeQuantity = (e) => {
     const typedValue = e.target.value;
@@ -33,7 +33,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
     } else {
       newCart.push({
         productDetails: product,
-        quantity: productQuantity,
+        quantity: Number.parseInt(productQuantity),
       });
     }
 

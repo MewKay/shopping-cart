@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import ActiveProduct from "./ActiveProduct";
 import userEvent from "@testing-library/user-event";
 
+//Mock Outlet Context
 const cart = [
   {
     productDetails: {
@@ -24,8 +25,9 @@ const cart = [
   },
 ];
 const setCart = vi.fn();
-vi.mock("react-router-dom", () => {
-  const reactRouterDom = vi.importActual("react-router-dom");
+
+vi.mock("react-router-dom", async (importOriginal) => {
+  const reactRouterDom = await importOriginal();
 
   return {
     ...reactRouterDom,
