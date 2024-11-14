@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { describe, expect, it, vi } from "vitest";
 import Store from "./Store";
-import routes from "./routes";
+import routes from "../routes";
 import userEvent from "@testing-library/user-event";
 
 vi.mock("./Products", () => ({

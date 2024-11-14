@@ -2,10 +2,10 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes";
-import fetchProducts from "./fetchProducts";
+import routes from "../routes";
+import fetchProducts from "../fetchProducts";
 
-vi.mock("./fetchProducts", () => ({
+vi.mock("../fetchProducts", () => ({
   default: vi.fn((category) => {
     const resolvedData = [
       { id: 1, title: "Product 1", category: "men's clothing" },

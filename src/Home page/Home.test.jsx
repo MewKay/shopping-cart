@@ -7,9 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./Home";
-import routes from "./routes";
+import routes from "../routes";
 
-vi.mock("./Store", () => ({
+vi.mock("../Store page/Store", () => ({
   default: () => <>This is store</>,
 }));
 

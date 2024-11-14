@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import fetchProducts from "./fetchProducts";
+import fetchProducts from "../fetchProducts";
 import { useNavigate, useParams } from "react-router-dom";
 import ActiveProduct from "./ActiveProduct";
 

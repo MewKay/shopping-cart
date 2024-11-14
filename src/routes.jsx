@@ -1,8 +1,8 @@
-import Home from "./Home";
-import Layout from "./Layout";
-import Products from "./Products";
-import Store from "./Store";
-import Cart from "./Cart";
+import Home from "./Home page/Home";
+import Layout from "./App layout/Layout";
+import Products from "./Store page/Products";
+import Store from "./Store page/Store";
+import Cart from "./Cart page/Cart";
 
 const routes = [
   {
