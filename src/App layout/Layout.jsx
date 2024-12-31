@@ -39,14 +39,13 @@ const Layout = () => {
       <Outlet
         context={{ cart, setCart, itemNumber, totalQuantity, orderSubtotal }}
       />
-      {showCartModal && (
-        <CartModal
-          totalQuantity={totalQuantity}
-          orderSubtotal={orderSubtotal}
-          cart={cart}
-          handleHideCartModal={handleHideCartModal}
-        />
-      )}
+      <CartModal
+        showCartModal={showCartModal}
+        totalQuantity={totalQuantity}
+        orderSubtotal={orderSubtotal}
+        cart={cart}
+        handleHideCartModal={handleHideCartModal}
+      />
     </>
   );
 };

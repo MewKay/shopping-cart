@@ -1,30 +1,56 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartModalItem from "./CartModalItem";
+import styles from "./CartModal.module.css";
 
 const CartModal = ({
+  showCartModal,
   totalQuantity,
   orderSubtotal,
   cart,
   handleHideCartModal,
 }) => {
-  const itemPlural = totalQuantity > 1 && "s";
+  const itemPlural = totalQuantity > 1 ? "s" : "";
+  const modalOpenStyle = showCartModal ? styles["open"] : "";
 
   return (
-    <div>
-      <div>
-        <button aria-label={"Close cart preview"} onClick={handleHideCartModal}>
+    <div
+      className={`
+      ${styles["modal-overlay"]}
+      ${modalOpenStyle}
+      `}
+      onClick={handleHideCartModal}
+      aria-hidden={!showCartModal}
+    >
+      <div
+        className={`
+          ${styles["container"]}
+          ${modalOpenStyle}
+          `}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className={styles["close-modal-button"]}
+          aria-label={"Close cart preview"}
+          onClick={handleHideCartModal}
+        >
           x
         </button>
-        <div>
+        <div className={styles["cart-quantity-info"]}>
           Your cart contains {totalQuantity} item{itemPlural}
         </div>
-        <div>
-          <div>
+        <div className={styles["cart-content"]}>
+          <div className={styles["subtotal-info"]}>
             <p>Order Subtotal</p>
-            <p>${orderSubtotal}</p>
+            <p className={styles["subtotal"]}>${orderSubtotal}</p>
           </div>
-          <Link to={"/store/cart"}>View or Edit Your Cart</Link>
+          <Link
+            className={styles["cart-link"]}
+            to={"/store/cart"}
+            onClick={handleHideCartModal}
+          >
+            View or Edit Your Cart
+          </Link>
           <ul>
             {cart.map((item) => (
               <CartModalItem
@@ -43,6 +69,7 @@ const CartModal = ({
 };
 
 CartModal.propTypes = {
+  showCartModal: PropTypes.bool.isRequired,
   totalQuantity: PropTypes.number.isRequired,
   orderSubtotal: PropTypes.number.isRequired,
   cart: PropTypes.arrayOf(
