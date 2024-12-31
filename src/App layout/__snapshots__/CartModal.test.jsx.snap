@@ -2,30 +2,51 @@
 
 exports[`CartModal component > renders correctly 1`] = `
 <div>
-  <div>
-    <div>
+  <div
+    aria-hidden="false"
+    class="
+      _modal-overlay_8d89e9
+      _open_8d89e9
+      "
+  >
+    <div
+      class="
+          _container_8d89e9
+          _open_8d89e9
+          "
+    >
       <button
         aria-label="Close cart preview"
+        class="_close-modal-button_8d89e9"
       >
         x
       </button>
-      <div>
+      <div
+        class="_cart-quantity-info_8d89e9"
+      >
         Your cart contains 
         10
          item
         s
       </div>
-      <div>
-        <div>
+      <div
+        class="_cart-content_8d89e9"
+      >
+        <div
+          class="_subtotal-info_8d89e9"
+        >
           <p>
             Order Subtotal
           </p>
-          <p>
+          <p
+            class="_subtotal_8d89e9"
+          >
             $
             352.45
           </p>
         </div>
         <a
+          class="_cart-link_8d89e9"
           href="/store/cart"
         >
           View or Edit Your Cart

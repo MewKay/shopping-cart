@@ -16,6 +16,7 @@ vi.mock("./CartModalItem", () => ({
 }));
 
 //Component props
+const showCartModal = true;
 const totalQuantity = 10;
 const orderSubtotal = 352.45;
 const cart = [
@@ -44,6 +45,7 @@ describe("CartModal component", () => {
   it("renders correctly", () => {
     const { container } = render(
       <CartModal
+        showCartModal={showCartModal}
         totalQuantity={totalQuantity}
         orderSubtotal={orderSubtotal}
         cart={cart}
@@ -59,6 +61,7 @@ describe("CartModal component", () => {
     const user = userEvent.setup();
     render(
       <CartModal
+        showCartModal={showCartModal}
         totalQuantity={totalQuantity}
         orderSubtotal={orderSubtotal}
         cart={cart}
@@ -75,6 +78,7 @@ describe("CartModal component", () => {
   it("adds plural on 'item' text if more than 1", () => {
     render(
       <CartModal
+        showCartModal={showCartModal}
         totalQuantity={totalQuantity}
         orderSubtotal={orderSubtotal}
         cart={cart}
@@ -92,6 +96,7 @@ describe("CartModal component", () => {
     const mockTotalQuantity = 1;
     render(
       <CartModal
+        showCartModal={showCartModal}
         totalQuantity={mockTotalQuantity}
         orderSubtotal={orderSubtotal}
         cart={cart}
