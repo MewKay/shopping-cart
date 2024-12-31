@@ -53,3 +53,7 @@ body {
   color: var(--grey-900);
   overflow-x: hidden;
 }
+
+button:hover {
+  cursor: pointer;
+}
