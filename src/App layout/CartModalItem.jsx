@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
+import styles from "./CartModalItem.module.css";
 
 const CartModalItem = ({ image, title, price, quantity }) => {
   return (
-    <li>
-      <div>
-        <img src={image} alt="" />
+    <li className={styles["item-card"]}>
+      <div className={styles["image-container"]}>
+        <img src={image} alt="" className={styles["item-image"]} />
       </div>
-      <div>
-        <p>{title}</p>
-        <p>
+      <div className={styles["item-info"]}>
+        <p className={styles["title"]}>{title}</p>
+        <p className={styles["item-price"]}>
           {quantity} x ${price}
         </p>
       </div>

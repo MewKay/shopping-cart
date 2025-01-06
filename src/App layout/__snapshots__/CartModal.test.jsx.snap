@@ -51,7 +51,9 @@ exports[`CartModal component > renders correctly 1`] = `
         >
           View or Edit Your Cart
         </a>
-        <ul>
+        <ul
+          class="_item-list_8d89e9"
+        >
           <li>
             <img
               alt=""

@@ -51,7 +51,7 @@ const CartModal = ({
           >
             View or Edit Your Cart
           </Link>
-          <ul>
+          <ul className={styles["item-list"]}>
             {cart.map((item) => (
               <CartModalItem
                 key={item.productDetails.id}

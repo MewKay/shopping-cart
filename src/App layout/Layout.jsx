@@ -27,8 +27,15 @@ const Layout = () => {
     Math.round(nonFormattedOrderSubtotal + "e2") + "e-2"
   );
 
-  const handleShowCartModal = () => setShowCartModal(true);
-  const handleHideCartModal = () => setShowCartModal(false);
+  const handleShowCartModal = () => {
+    document.body.style.overflow = "hidden";
+    setShowCartModal(true);
+  };
+
+  const handleHideCartModal = () => {
+    document.body.style.overflow = "";
+    setShowCartModal(false);
+  };
 
   return (
     <>
