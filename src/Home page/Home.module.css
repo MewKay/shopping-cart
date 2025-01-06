@@ -24,9 +24,9 @@
   color: var(--grey-100);
   font-weight: 700;
   font-size: var(--font-size-5);
-  box-shadow: 0 1px 3px var(--grey-600);
+  box-shadow: var(--shadow-3);
 }
 
 .store-link:active {
-  box-shadow: none;
+  box-shadow: var(--shadow-1);
 }

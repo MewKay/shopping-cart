@@ -4,7 +4,7 @@
   background-color: var(--grey-100);
   max-height: var(--spacing-12);
   padding: var(--spacing-4) var(--spacing-4);
-  box-shadow: 0 0 5px var(--grey-400);
+  box-shadow: var(--shadow-2);
 }
 
 .image-container {

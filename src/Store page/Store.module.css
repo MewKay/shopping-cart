@@ -10,7 +10,7 @@
   flex-direction: column;
   background-color: var(--grey-100);
   padding: var(--spacing-6) var(--spacing-6);
-  box-shadow: 0 15px 35px var(--grey-500);
+  box-shadow: var(--shadow-4);
 }
 
 .heading {
