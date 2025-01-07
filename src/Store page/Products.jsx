@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 import fetchProducts from "../fetchProducts";
 import { useNavigate, useParams } from "react-router-dom";
 import ActiveProduct from "./ActiveProduct";
+import styles from "./Products.module.css";
 
 const Products = () => {
   const { category } = useParams();
@@ -18,6 +19,15 @@ const Products = () => {
     searchedPattern.test(product.title)
   );
   const isThereNoProducts = filteredProductList.length <= 0;
+
+  const allFilterActive = category === "all" ? styles["active"] : "";
+  const menClothingFilterActive =
+    category === "men's clothing" ? styles["active"] : "";
+  const womenClothingFilterActive =
+    category === "women's clothing" ? styles["active"] : "";
+  const jeweleryFilterActive = category === "jewelery" ? styles["active"] : "";
+  const electronicsFilterActive =
+    category === "electronics" ? styles["active"] : "";
 
   useEffect(() => {
     const updateProductList = async function putFetchedDataToProductList() {
@@ -50,85 +60,94 @@ const Products = () => {
   };
 
   return (
-    <div>
-      {activeProduct && (
-        <ActiveProduct
-          product={activeProduct}
-          onRemoveActiveProduct={handleRemoveActive}
-        />
-      )}
-      <div className="product-list-header">
-        <ul className="product-category-filter">
-          <li>
-            <button onClick={() => navigate("../all", { relative: "path" })}>
-              All
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() =>
-                navigate("../men's clothing", { relative: "path" })
-              }
-            >
-              Men&apos;s Clothing
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() =>
-                navigate("../women's clothing", { relative: "path" })
-              }
-            >
-              Women&apos;s Clothing
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("../jewelery", { relative: "path" })}
-            >
-              Jewelery
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("../electronics", { relative: "path" })}
-            >
-              Electronics
-            </button>
-          </li>
-        </ul>
-        <input
-          id="search-product"
-          type="text"
-          placeholder="Search for a product..."
-          value={searchedProduct}
-          onChange={handleSearchChange}
-        />
+    <main className={styles["main-container"]}>
+      <div className={styles["container"]}>
+        {activeProduct && (
+          <ActiveProduct
+            product={activeProduct}
+            onRemoveActiveProduct={handleRemoveActive}
+          />
+        )}
+        <div className={styles["products-list-header"]}>
+          <ul className={styles["category-filter"]}>
+            <li>
+              <button
+                onClick={() => navigate("../all", { relative: "path" })}
+                className={allFilterActive}
+              >
+                All
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() =>
+                  navigate("../men's clothing", { relative: "path" })
+                }
+                className={menClothingFilterActive}
+              >
+                Men&apos;s Clothing
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() =>
+                  navigate("../women's clothing", { relative: "path" })
+                }
+                className={womenClothingFilterActive}
+              >
+                Women&apos;s Clothing
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => navigate("../jewelery", { relative: "path" })}
+                className={jeweleryFilterActive}
+              >
+                Jewelery
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => navigate("../electronics", { relative: "path" })}
+                className={electronicsFilterActive}
+              >
+                Electronics
+              </button>
+            </li>
+          </ul>
+          <input
+            className={styles["search-product"]}
+            type="text"
+            placeholder="Search for a product..."
+            value={searchedProduct}
+            onChange={handleSearchChange}
+          />
+        </div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Failed to load products. Please try again later.</p>
+        ) : isThereNoProducts ? (
+          <p>
+            Sorry, no products match your search. Please try adjusting your
+            filters or search terms.
+          </p>
+        ) : (
+          <ul>
+            {filteredProductList.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                imgURL={product.image}
+                title={product.title}
+                price={product.price}
+                indexToShow={index}
+                onClick={handleCardClick}
+              />
+            ))}
+          </ul>
+        )}
       </div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Failed to load products. Please try again later.</p>
-      ) : isThereNoProducts ? (
-        <p>
-          Sorry, no products match your search. Please try adjusting your
-          filters or search terms.
-        </p>
-      ) : (
-        <ul>
-          {filteredProductList.map((product, index) => (
-            <ProductCard
-              key={product.id}
-              imgURL={product.image}
-              title={product.title}
-              price={product.price}
-              indexToShow={index}
-              onClick={handleCardClick}
-            />
-          ))}
-        </ul>
-      )}
-    </div>
+    </main>
   );
 };
 
