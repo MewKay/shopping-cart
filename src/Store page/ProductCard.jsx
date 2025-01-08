@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
+import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ imgURL, title, price, indexToShow, onClick }) => {
   return (
-    <button onClick={() => onClick(indexToShow)}>
-      <div className="product-image">
+    <button
+      className={styles["container"]}
+      onClick={() => onClick(indexToShow)}
+    >
+      <div className={styles["product-image"]}>
         <img src={imgURL} alt="" />
       </div>
-      <p>{title}</p>
-      <p>${price}</p>
+      <p className={styles["item-title"]}>{title}</p>
+      <p className={styles["item-price"]}>${price}</p>
     </button>
   );
 };

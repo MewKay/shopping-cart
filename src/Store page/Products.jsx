@@ -123,29 +123,31 @@ const Products = () => {
             onChange={handleSearchChange}
           />
         </div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>Failed to load products. Please try again later.</p>
-        ) : isThereNoProducts ? (
-          <p>
-            Sorry, no products match your search. Please try adjusting your
-            filters or search terms.
-          </p>
-        ) : (
-          <ul>
-            {filteredProductList.map((product, index) => (
-              <ProductCard
-                key={product.id}
-                imgURL={product.image}
-                title={product.title}
-                price={product.price}
-                indexToShow={index}
-                onClick={handleCardClick}
-              />
-            ))}
-          </ul>
-        )}
+        <div className={styles["list-content"]}>
+          {loading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>Failed to load products. Please try again later.</p>
+          ) : isThereNoProducts ? (
+            <p>
+              Sorry, no products match your search. Please try adjusting your
+              filters or search terms.
+            </p>
+          ) : (
+            <div className={styles["products-list"]}>
+              {filteredProductList.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  imgURL={product.image}
+                  title={product.title}
+                  price={product.price}
+                  indexToShow={index}
+                  onClick={handleCardClick}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );
