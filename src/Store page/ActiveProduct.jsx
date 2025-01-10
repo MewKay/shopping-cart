@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import styles from "./ActiveProduct.module.css";
 
 const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
   const { cart, setCart } = useOutletContext();
@@ -46,18 +47,19 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
   };
 
   return (
-    <div>
-      <div>
-        <img src={image} alt="" />
+    <div className={styles["container"]}>
+      <div className={styles["image-container"]}>
+        <img src={image} alt="" className={styles["product-preview"]} />
       </div>
-      <div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <p>${price}</p>
-        <div>
+      <div className={styles["product-info"]}>
+        <h3 className={styles["title"]}>{title}</h3>
+        <p className={styles["description"]}>{description}</p>
+        <p className={styles["price"]}>${price}</p>
+        <div className={styles["quantity-container"]}>
           <button
             aria-label="Increase quantity"
             onClick={handleIncreaseQuantity}
+            className={styles["add-button"]}
           >
             +
           </button>
@@ -65,23 +67,32 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
             aria-label="Quantity value"
             type="number"
             min={1}
+            max={999}
             value={productQuantity}
             onChange={handleTypeQuantity}
+            className={styles["quantity-input"]}
           />
           <button
             aria-label="Decrease quantity"
             onClick={handleDecreaseQuantity}
+            className={styles["subtract-button"]}
           >
             -
           </button>
         </div>
-      </div>
-      <div>
-        <button onClick={handleAddItemToCart}>Add to cart</button>
+        <div className={styles["add-cart-container"]}>
+          <button
+            onClick={handleAddItemToCart}
+            className={styles["add-cart-button"]}
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
       <button
         aria-label="Close selected product"
         onClick={handleCloseSelectedItem}
+        className={styles["close-button"]}
       >
         x
       </button>

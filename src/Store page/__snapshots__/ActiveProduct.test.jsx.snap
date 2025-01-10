@@ -2,50 +2,74 @@
 
 exports[`ActiveProduct component > renders correctly 1`] = `
 <div>
-  <div>
-    <div>
+  <div
+    class="_container_1a7911"
+  >
+    <div
+      class="_image-container_1a7911"
+    >
       <img
         alt=""
+        class="_product-preview_1a7911"
         src="https://image.placeholder.com/product"
       />
     </div>
-    <div>
-      <h3>
+    <div
+      class="_product-info_1a7911"
+    >
+      <h3
+        class="_title_1a7911"
+      >
         Product 0
       </h3>
-      <p>
+      <p
+        class="_description_1a7911"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam asperiores minus dolores cumque corporis vel dolorem atque non reiciendis.
       </p>
-      <p>
+      <p
+        class="_price_1a7911"
+      >
         $
         50
       </p>
-      <div>
+      <div
+        class="_quantity-container_1a7911"
+      >
         <button
           aria-label="Increase quantity"
+          class="_add-button_1a7911"
         >
           +
         </button>
         <input
           aria-label="Quantity value"
+          class="_quantity-input_1a7911"
+          max="999"
           min="1"
           type="number"
           value="1"
         />
         <button
           aria-label="Decrease quantity"
+          class="_subtract-button_1a7911"
         >
           -
         </button>
       </div>
-    </div>
-    <div>
-      <button>
-        Add to cart
-      </button>
+      <div
+        class="_add-cart-container_1a7911"
+      >
+        <button
+          class="_add-cart-button_1a7911"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
     <button
       aria-label="Close selected product"
+      class="_close-button_1a7911"
     >
       x
     </button>
