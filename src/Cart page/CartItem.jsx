@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import styles from "./CartItem.module.css";
 
 const CartItem = ({ cartItem, cartItemIndex }) => {
   const { cart, setCart } = useOutletContext();
@@ -11,7 +12,10 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
 
   const [productQuantity, setProductQuantity] = useState(quantity);
 
-  const totalItemPrice = price * productQuantity;
+  //Will format the number to always have 2 decimal places
+  const totalItemPrice = Number(
+    Math.round(price * productQuantity + "e2") + "e-2"
+  );
 
   const handleIncreaseQuantity = () => {
     const newCart = structuredClone(cart);
@@ -64,43 +68,50 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
   };
 
   return (
-    <li>
-      <div>
-        <div>
-          <img src={image} alt="" />
-          <div>
-            <p>{title}</p>
-            <p>Category: {category}</p>
-          </div>
+    <>
+      <div className={styles["details-container"]}>
+        <div className={styles["image-container"]}>
+          <img src={image} alt="" className={styles["image-product"]} />
         </div>
-        <div>
-          <button
-            aria-label="Increase quantity"
-            onClick={handleIncreaseQuantity}
-          >
-            +
-          </button>
-          <input
-            aria-label="Quantity value"
-            type="number"
-            min={1}
-            value={productQuantity}
-            onChange={handleTypeQuantity}
-          />
-          <button
-            aria-label="Decrease quantity"
-            onClick={handleDecreaseQuantity}
-          >
-            -
-          </button>
+        <div className={styles["details-info"]}>
+          <p className={styles["details-title"]}>{title}</p>
+          <p className={styles["details-category"]}>Category: {category}</p>
         </div>
-        <div>${price}</div>
-        <div>${totalItemPrice}</div>
       </div>
-      <button aria-label="Remove item from cart" onClick={handleRemoveCartItem}>
+      <div className={styles["quantity-container"]}>
+        <button
+          aria-label="Increase quantity"
+          onClick={handleIncreaseQuantity}
+          className={styles["add-button"]}
+        >
+          +
+        </button>
+        <input
+          aria-label="Quantity value"
+          type="number"
+          min={1}
+          value={productQuantity}
+          onChange={handleTypeQuantity}
+          className={styles["quantity-input"]}
+        />
+        <button
+          aria-label="Decrease quantity"
+          onClick={handleDecreaseQuantity}
+          className={styles["subtract-button"]}
+        >
+          -
+        </button>
+      </div>
+      <div>${price}</div>
+      <div>${totalItemPrice}</div>
+      <button
+        aria-label="Remove item from cart"
+        onClick={handleRemoveCartItem}
+        className={styles["remove-item"]}
+      >
         X
       </button>
-    </li>
+    </>
   );
 };
 
