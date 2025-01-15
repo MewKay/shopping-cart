@@ -31,7 +31,7 @@
 .item-price {
   text-align: left;
   font-size: var(--font-size-1);
-  color: var(--grey-800);
+  color: var(--primary-900);
 }
 
 .item-title {

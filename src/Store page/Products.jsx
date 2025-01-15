@@ -127,12 +127,16 @@ const Products = () => {
           {loading ? (
             <p>Loading...</p>
           ) : error ? (
-            <p>Failed to load products. Please try again later.</p>
+            <div className={styles["alert-message"]}>
+              <p>Failed to load products. Please try again later.</p>
+            </div>
           ) : isThereNoProducts ? (
-            <p>
-              Sorry, no products match your search. Please try adjusting your
-              filters or search terms.
-            </p>
+            <div className={styles["alert-message"]}>
+              <p>
+                Sorry, no products match your search. Please try adjusting your
+                filters or search terms.
+              </p>
+            </div>
           ) : (
             <div className={styles["products-list"]}>
               {filteredProductList.map((product, index) => (

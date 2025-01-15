@@ -30,6 +30,7 @@
 
 .title {
   margin-bottom: var(--spacing-4);
+  color: var(--primary-900);
 }
 
 .description {
@@ -41,11 +42,12 @@
   font-weight: 700;
   font-size: var(--font-size-4);
   margin-bottom: var(--spacing-4);
+  color: var(--primary-900);
 }
 
 .quantity-container {
   display: flex;
-  border: solid 1px var(--grey-800);
+  border: solid 1px var(--primary-800);
   width: var(--spacing-10);
   height: var(--spacing-7);
   margin-bottom: var(--spacing-4);
@@ -60,13 +62,13 @@
 }
 
 .add-button {
-  background-color: var(--grey-800);
-  color: var(--grey-100);
+  background-color: var(--primary-800);
+  color: var(--primary-100);
 }
 
 .subtract-button {
-  background-color: var(--grey-200);
-  color: var(--grey-800);
+  background-color: var(--primary-200);
+  color: var(--primary-800);
 }
 
 .add-cart-container {
@@ -77,16 +79,16 @@
   padding: var(--spacing-3) var(--spacing-7);
   font-size: var(--font-size-4);
   font-weight: 700;
-  border: solid 2px var(--grey-700);
+  border: solid 2px var(--primary-700);
   background: linear-gradient(
     to right,
-    var(--grey-700) 50%,
+    var(--primary-700) 50%,
     hsl(0, 0%, 0%, 0) 50%
   );
   background-size: 200% 100%;
   background-position: 100% 0%;
-  color: var(--grey-700);
-  transition: all 0.5s ease;
+  color: var(--primary-700);
+  transition: all 0.3s ease;
 }
 
 .add-cart-button:hover {
@@ -113,5 +115,5 @@
   right: 0;
   border: none;
   background-color: hsl(0, 0%, 0%, 0);
-  color: var(--grey-900);
+  color: var(--primary-700);
 }
