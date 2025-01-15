@@ -1,5 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom";
 import CartItem from "./CartItem";
+import { MoveLeft } from "lucide-react";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
@@ -29,7 +30,7 @@ const Cart = () => {
                 <p className={styles["cart-list-header"]}>QUANTITY</p>
                 <p className={styles["cart-list-header"]}>PRICE</p>
                 <p className={styles["cart-list-header"]}>TOTAL</p>
-                <p></p>
+                <p className={styles["cart-list-header"]}>REMOVE</p>
                 {cart.map((item, index) => (
                   <CartItem
                     key={item.productDetails.id}
@@ -38,9 +39,12 @@ const Cart = () => {
                   />
                 ))}
               </div>
-              <Link to={"/store/all"} className={styles["go-shop-link"]}>
-                {"<-- Continue Shopping"}
-              </Link>
+              <div className={styles["go-shop-link-container"]}>
+                <Link to={"/store/all"} className={styles["go-shop-link"]}>
+                  <MoveLeft />
+                  Continue Shopping
+                </Link>
+              </div>
             </div>
             <div className={styles["summary-container"]}>
               <h3 className={styles["summary-title"]}>Order Summary</h3>

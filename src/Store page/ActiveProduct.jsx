@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { CircleX, Minus, Plus, ShoppingCart } from "lucide-react";
 import styles from "./ActiveProduct.module.css";
 
 const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
@@ -61,7 +62,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
             onClick={handleIncreaseQuantity}
             className={styles["add-button"]}
           >
-            +
+            <Plus />
           </button>
           <input
             aria-label="Quantity value"
@@ -77,7 +78,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
             onClick={handleDecreaseQuantity}
             className={styles["subtract-button"]}
           >
-            -
+            <Minus />
           </button>
         </div>
         <div className={styles["add-cart-container"]}>
@@ -86,6 +87,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
             className={styles["add-cart-button"]}
           >
             Add to cart
+            <ShoppingCart />
           </button>
         </div>
       </div>
@@ -94,7 +96,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
         onClick={handleCloseSelectedItem}
         className={styles["close-button"]}
       >
-        x
+        <CircleX />
       </button>
     </div>
   );

@@ -57,13 +57,27 @@
   font-size: var(--font-size-1);
 }
 
+.go-shop-link-container {
+  display: flex;
+}
+
 .go-shop-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
   margin-left: var(--spacing-5);
   margin-top: var(--spacing-7);
   text-decoration: none;
   color: var(--primary-800);
   font-size: var(--font-size-4);
+}
+
+.go-shop-link svg {
+  transition: transform 0.3s;
+}
+
+.go-shop-link:hover svg {
+  transform: translateX(-50%);
 }
 
 .summary-container {
@@ -107,7 +121,9 @@
 
 .empty-message {
   font-size: var(--font-size-8);
+  font-weight: 700;
   padding: var(--spacing-9) var(--spacing-10);
+  color: var(--accent-2-900);
 }
 
 .checkout-button {

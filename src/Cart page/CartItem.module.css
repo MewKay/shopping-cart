@@ -51,9 +51,17 @@
 }
 
 .remove-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid 1px var(--grey-600);
   height: var(--spacing-7);
   width: var(--spacing-7);
   background-color: var(--grey-100);
   color: var(--grey-700);
+}
+
+.remove-item:hover {
+  color: var(--accent-3-500);
+  border-color: var(--accent-3-500);
 }

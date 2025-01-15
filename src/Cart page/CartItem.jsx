@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import { Minus, Plus, X } from "lucide-react";
 import styles from "./CartItem.module.css";
 
 const CartItem = ({ cartItem, cartItemIndex }) => {
@@ -84,7 +85,7 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
           onClick={handleIncreaseQuantity}
           className={styles["add-button"]}
         >
-          +
+          <Plus />
         </button>
         <input
           aria-label="Quantity value"
@@ -99,7 +100,7 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
           onClick={handleDecreaseQuantity}
           className={styles["subtract-button"]}
         >
-          -
+          <Minus />
         </button>
       </div>
       <div>${price}</div>
@@ -109,7 +110,7 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
         onClick={handleRemoveCartItem}
         className={styles["remove-item"]}
       >
-        X
+        <X />
       </button>
     </>
   );

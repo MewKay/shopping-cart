@@ -4,6 +4,7 @@ import fetchProducts from "../fetchProducts";
 import { useNavigate, useParams } from "react-router-dom";
 import ActiveProduct from "./ActiveProduct";
 import styles from "./Products.module.css";
+import { AlertTriangle } from "lucide-react";
 
 const Products = () => {
   const { category } = useParams();
@@ -128,10 +129,12 @@ const Products = () => {
             <p>Loading...</p>
           ) : error ? (
             <div className={styles["alert-message"]}>
+              <AlertTriangle />
               <p>Failed to load products. Please try again later.</p>
             </div>
           ) : isThereNoProducts ? (
             <div className={styles["alert-message"]}>
+              <AlertTriangle />
               <p>
                 Sorry, no products match your search. Please try adjusting your
                 filters or search terms.

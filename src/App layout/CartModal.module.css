@@ -35,10 +35,15 @@
 
 .close-modal-button {
   position: absolute;
-  top: var(--spacing-1);
+  top: var(--spacing-2);
   right: var(--spacing-3);
   border: none;
   background-color: var(--grey-100);
+  color: var(--grey-500);
+}
+
+.close-modal-button:hover {
+  color: var(--primary-800);
 }
 
 .cart-quantity-info {

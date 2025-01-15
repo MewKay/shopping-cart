@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartModalItem from "./CartModalItem";
+import { X } from "lucide-react";
 import styles from "./CartModal.module.css";
 
 const CartModal = ({
@@ -34,7 +35,7 @@ const CartModal = ({
           aria-label={"Close cart preview"}
           onClick={handleHideCartModal}
         >
-          x
+          <X />
         </button>
         <div className={styles["cart-quantity-info"]}>
           Your cart contains {totalQuantity} item{itemPlural}

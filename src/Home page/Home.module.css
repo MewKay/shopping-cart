@@ -20,16 +20,33 @@
 }
 
 .store-link {
+  display: flex;
+  align-items: end;
   padding: var(--spacing-3) var(--spacing-7);
   text-decoration: none;
   background-color: var(--accent-1-500);
-  color: var(--grey-900);
+  color: var(--primary-900);
+  box-shadow: var(--shadow-1);
+  transition: all 0.2s;
+}
+
+.link-text {
   font-weight: 700;
   font-size: var(--font-size-5);
-  box-shadow: var(--shadow-1);
-  transition: box-shadow 0.2s;
+  border-right: solid 2px var(--primary-900);
+  padding-right: var(--spacing-3);
+}
+
+.link-icon {
+  margin-left: var(--spacing-2);
+  transition: transform 0.2s;
 }
 
 .store-link:hover {
   box-shadow: var(--shadow-4);
+  transform: translateY(-3%);
+}
+
+.store-link:hover .link-icon {
+  transform: translateX(30%);
 }

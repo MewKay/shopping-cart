@@ -52,6 +52,8 @@
 }
 
 .alert-message {
+  display: flex;
+  gap: var(--spacing-2);
   background-color: var(--accent-2-100);
   color: var(--accent-2-900);
   border: solid 2px var(--accent-2-800);

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
+import { ArrowRight } from "lucide-react";
 
 const Home = function createHomeComponent() {
   return (
@@ -10,7 +11,8 @@ const Home = function createHomeComponent() {
         itaque corporis vitae id vero quaerat possimus nisi neque alias?
       </p>
       <Link to={"store"} className={styles["store-link"]}>
-        Go to store
+        <p className={styles["link-text"]}>Go to store</p>
+        <ArrowRight size={28} className={styles["link-icon"]} />
       </Link>
     </main>
   );

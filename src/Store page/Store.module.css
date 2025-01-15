@@ -26,6 +26,15 @@
   margin-bottom: var(--spacing-6);
 }
 
+.category-link,
+.all-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--grey-600);
+  transition: all 0.2s;
+}
+
 .category-link {
   text-decoration: none;
   border: solid 2px var(--grey-700);
@@ -34,21 +43,26 @@
 }
 
 .all-link {
-  text-decoration: underline 2px;
-  text-underline-offset: var(--spacing-2);
-  font-size: var(--font-size-6);
+  justify-content: center;
+  text-decoration: none;
 }
 
-.category-link,
-.all-link {
-  color: var(--grey-600);
-  transition: all 0.2s;
+.all-link p {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border-bottom: solid 2px var(--grey-600);
+  font-size: var(--font-size-6);
 }
 
 .category-link:hover,
 .all-link:hover {
   color: var(--primary-800);
   transform: translateY(-3px);
+}
+
+.all-link:hover p {
+  border-bottom: solid 2px var(--primary-800);
 }
 
 .category-link:hover {

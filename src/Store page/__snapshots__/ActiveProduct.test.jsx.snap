@@ -40,7 +40,25 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           aria-label="Increase quantity"
           class="_add-button_1a7911"
         >
-          +
+          <svg
+            class="lucide lucide-plus"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 12h14"
+            />
+            <path
+              d="M12 5v14"
+            />
+          </svg>
         </button>
         <input
           aria-label="Quantity value"
@@ -54,7 +72,22 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           aria-label="Decrease quantity"
           class="_subtract-button_1a7911"
         >
-          -
+          <svg
+            class="lucide lucide-minus"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 12h14"
+            />
+          </svg>
         </button>
       </div>
       <div
@@ -64,6 +97,32 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           class="_add-cart-button_1a7911"
         >
           Add to cart
+          <svg
+            class="lucide lucide-shopping-cart"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="8"
+              cy="21"
+              r="1"
+            />
+            <circle
+              cx="19"
+              cy="21"
+              r="1"
+            />
+            <path
+              d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -71,7 +130,30 @@ exports[`ActiveProduct component > renders correctly 1`] = `
       aria-label="Close selected product"
       class="_close-button_1a7911"
     >
-      x
+      <svg
+        class="lucide lucide-circle-x"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="m15 9-6 6"
+        />
+        <path
+          d="m9 9 6 6"
+        />
+      </svg>
     </button>
   </div>
 </div>
