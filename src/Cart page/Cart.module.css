@@ -25,6 +25,7 @@
   justify-content: space-between;
   align-items: baseline;
   font-weight: 700;
+  color: var(--primary-800);
   padding-bottom: var(--spacing-4);
   margin-bottom: var(--spacing-4);
   border-bottom: solid 2px var(--grey-400);
@@ -58,15 +59,17 @@
 
 .go-shop-link {
   display: block;
+  margin-left: var(--spacing-5);
   margin-top: var(--spacing-7);
   text-decoration: none;
-  color: var(--grey-700);
+  color: var(--primary-800);
   font-size: var(--font-size-4);
 }
 
 .summary-container {
   flex: 2;
-  background-color: var(--grey-200);
+  background-color: var(--primary-800);
+  color: var(--grey-100);
 }
 
 .summary-title {
@@ -110,7 +113,8 @@
 .checkout-button {
   padding: var(--spacing-3) 0;
   border: none;
-  background-color: var(--grey-900);
-  color: var(--grey-100);
+  background-color: var(--accent-1-500);
+  color: var(--primary-900);
   font-weight: 700;
+  font-size: var(--font-size-4);
 }
