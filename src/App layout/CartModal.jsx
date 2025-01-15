@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartModalItem from "./CartModalItem";
+import { motion } from "motion/react";
 import { X } from "lucide-react";
 import styles from "./CartModal.module.css";
 
@@ -15,20 +16,26 @@ const CartModal = ({
   const modalOpenStyle = showCartModal ? styles["open"] : "";
 
   return (
-    <div
+    <motion.div
       className={`
       ${styles["modal-overlay"]}
       ${modalOpenStyle}
       `}
       onClick={handleHideCartModal}
-      aria-hidden={!showCartModal}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
-      <div
+      <motion.div
         className={`
           ${styles["container"]}
           ${modalOpenStyle}
           `}
         onClick={(e) => e.stopPropagation()}
+        initial={{ x: "100%" }}
+        animate={{ x: "0%" }}
+        exit={{ x: "100%" }}
+        transition={{ type: "tween", duration: 0.5 }}
       >
         <button
           className={styles["close-modal-button"]}
@@ -64,8 +71,8 @@ const CartModal = ({
             ))}
           </ul>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

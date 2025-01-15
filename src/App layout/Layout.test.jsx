@@ -31,7 +31,7 @@ describe("Layout component", () => {
   });
 
   describe("CartModal child", () => {
-    it.skip("should not render CartModal by default", () => {
+    it("should not render CartModal by default", () => {
       render(<Layout />);
 
       const cartText = screen.queryByText("This is cart modal");
@@ -52,7 +52,7 @@ describe("Layout component", () => {
       expect(cartText).toBeInTheDocument();
     });
 
-    it.skip("should hide on 'Close cart preview' button click", async () => {
+    it("should hide on 'Close cart preview' button click", async () => {
       const user = userEvent.setup();
       render(<Layout />);
 

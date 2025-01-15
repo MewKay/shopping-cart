@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
+import Header from "./Header";
 import CartModal from "./CartModal";
 
 const Layout = () => {
@@ -46,13 +47,17 @@ const Layout = () => {
       <Outlet
         context={{ cart, setCart, itemNumber, totalQuantity, orderSubtotal }}
       />
-      <CartModal
-        showCartModal={showCartModal}
-        totalQuantity={totalQuantity}
-        orderSubtotal={orderSubtotal}
-        cart={cart}
-        handleHideCartModal={handleHideCartModal}
-      />
+      <AnimatePresence>
+        {showCartModal && (
+          <CartModal
+            showCartModal={showCartModal}
+            totalQuantity={totalQuantity}
+            orderSubtotal={orderSubtotal}
+            cart={cart}
+            handleHideCartModal={handleHideCartModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };

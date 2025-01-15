@@ -3,17 +3,18 @@
 exports[`CartModal component > renders correctly 1`] = `
 <div>
   <div
-    aria-hidden="false"
     class="
       _modal-overlay_8d89e9
       _open_8d89e9
       "
+    style="opacity: 0;"
   >
     <div
       class="
           _container_8d89e9
           _open_8d89e9
           "
+      style="transform: translateX(100%);"
     >
       <button
         aria-label="Close cart preview"

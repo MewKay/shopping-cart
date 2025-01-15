@@ -8,9 +8,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: flex-end;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease;
 }
 
 .container {
@@ -19,18 +16,7 @@
   flex-direction: column;
   background-color: var(--grey-200);
   box-shadow: var(--shadow-5);
-  transform: translateX(100%);
-  transition: transform 0.5s ease;
   overflow-y: auto;
-}
-
-.modal-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.container.open {
-  transform: translateX(0);
 }
 
 .close-modal-button {
