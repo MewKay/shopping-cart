@@ -16,6 +16,7 @@
 .heading {
   margin-bottom: var(--spacing-7);
   font-size: var(--font-size-8);
+  color: var(--primary-900);
 }
 
 .category-container {
@@ -46,10 +47,10 @@
 
 .category-link:hover,
 .all-link:hover {
-  color: var(--grey-800);
+  color: var(--primary-800);
   transform: translateY(-3px);
 }
 
 .category-link:hover {
-  border-color: var(--grey-800);
+  border-color: var(--primary-800);
 }
