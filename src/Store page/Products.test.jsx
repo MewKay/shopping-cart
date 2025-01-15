@@ -150,6 +150,25 @@ describe("Products Component", () => {
         );
       }
     );
+
+    it("should handle race conditions", async () => {
+      const router = createMemoryRouter(routes, {
+        initialEntries: ["/store/jewelery"],
+      });
+      const user = userEvent.setup();
+      render(<RouterProvider router={router} />);
+
+      const filterButton = screen.getByRole("button", {
+        name: "Electronics",
+      });
+      await user.click(filterButton);
+
+      const electronicsProduct = await screen.findByText("Product 10");
+      const jeweleryProduct = screen.queryByText("Product 8");
+
+      expect(jeweleryProduct).not.toBeInTheDocument();
+      expect(electronicsProduct).toBeInTheDocument();
+    });
   });
 
   describe("Search products within the category", () => {

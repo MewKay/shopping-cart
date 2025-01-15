@@ -17,24 +17,37 @@ const Products = () => {
   const filteredProductList = productList.filter((product) =>
     searchedPattern.test(product.title)
   );
-  const isThereNoProducts = filteredProductList.length <= 0;
+  const isThereNoProducts =
+    searchedProduct !== "" && filteredProductList.length <= 0;
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const updateProductList = async function putFetchedDataToProductList() {
       setLoading(true);
+
       try {
-        const updatedProductList = await fetchProducts(category);
+        const updatedProductList = await fetchProducts(category, signal);
         setProductList(updatedProductList);
         setError(null);
+        setLoading(false);
       } catch (error) {
+        if (error.name === "AbortError") {
+          // Keep loading while category is switched
+          setLoading(true);
+          return;
+        }
+
         setError(error.message);
         setProductList([]);
-      } finally {
         setLoading(false);
       }
     };
 
     updateProductList();
+
+    return () => controller.abort();
   }, [category]);
 
   const handleSearchChange = (e) => {
