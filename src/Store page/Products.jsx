@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductCard from "./ProductCard";
-import fetchProducts from "../services/fetchProducts";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ActiveProduct from "./ActiveProduct";
+import useFetchProducts from "../hooks/useFetchProducts";
 
 const Products = () => {
-  const { category } = useParams();
+  const { productList, loading, error } = useFetchProducts();
   const navigate = useNavigate();
-  const [productList, setProductList] = useState([]);
   const [searchedProduct, setSearchedProduct] = useState("");
   const [activeProduct, setActiveProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const searchedPattern = new RegExp(searchedProduct, "i");
   const filteredProductList = productList.filter((product) =>
@@ -19,36 +16,6 @@ const Products = () => {
   );
   const isThereNoProducts =
     searchedProduct !== "" && filteredProductList.length <= 0;
-
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    const updateProductList = async function putFetchedDataToProductList() {
-      setLoading(true);
-
-      try {
-        const updatedProductList = await fetchProducts(category, signal);
-        setProductList(updatedProductList);
-        setError(null);
-        setLoading(false);
-      } catch (error) {
-        if (error.name === "AbortError") {
-          // Keep loading while category is switched
-          setLoading(true);
-          return;
-        }
-
-        setError(error.message);
-        setProductList([]);
-        setLoading(false);
-      }
-    };
-
-    updateProductList();
-
-    return () => controller.abort();
-  }, [category]);
 
   const handleSearchChange = (e) => {
     setSearchedProduct(e.target.value);
