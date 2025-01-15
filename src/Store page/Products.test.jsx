@@ -3,9 +3,9 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import routes from "../routes";
-import fetchProducts from "../fetchProducts";
+import fetchProducts from "../services/fetchProducts";
 
-vi.mock("../fetchProducts", () => ({
+vi.mock("../services/fetchProducts", () => ({
   default: vi.fn((category) => {
     const resolvedData = [
       { id: 1, title: "Product 1", category: "men's clothing" },
