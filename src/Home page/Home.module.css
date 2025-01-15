@@ -9,24 +9,27 @@
 .hero-head {
   font-size: var(--font-size-10);
   margin-bottom: var(--spacing-4);
+  color: var(--primary-800);
 }
 
 .hero-intro {
   font-size: var(--font-size-6);
   max-width: 35em;
   margin-bottom: var(--spacing-7);
+  color: var(--primary-900);
 }
 
 .store-link {
   padding: var(--spacing-3) var(--spacing-7);
   text-decoration: none;
-  background-color: var(--grey-700);
-  color: var(--grey-100);
+  background-color: var(--accent-1-500);
+  color: var(--grey-900);
   font-weight: 700;
   font-size: var(--font-size-5);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow 0.2s;
 }
 
-.store-link:active {
-  box-shadow: var(--shadow-1);
+.store-link:hover {
+  box-shadow: var(--shadow-4);
 }
