@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 var(--spacing-6);
+  background-color: var(--grey-100);
+  box-shadow: var(--shadow-1);
+}
+
+.brandname {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-7);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--primary-700);
+}
+
+.navigation {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-6);
+}
+
+.cart-open-button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4);
+
+  color: var(--grey-500);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-4);
+  border-bottom: solid var(--spacing-1) var(--grey-100);
+}
+
+.nav-item:hover {
+  color: var(--primary-700);
+}
+
+.selected {
+  color: var(--primary-700);
+  border-bottom: solid var(--spacing-1) var(--primary-700);
+}

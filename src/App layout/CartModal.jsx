@@ -1,31 +1,65 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartModalItem from "./CartModalItem";
+import { motion } from "motion/react";
+import { X } from "lucide-react";
+import styles from "./CartModal.module.css";
 
 const CartModal = ({
+  showCartModal,
   totalQuantity,
   orderSubtotal,
   cart,
   handleHideCartModal,
 }) => {
-  const itemPlural = totalQuantity > 1 && "s";
+  const itemPlural = totalQuantity > 1 ? "s" : "";
+  const modalOpenStyle = showCartModal ? styles["open"] : "";
 
   return (
-    <div>
-      <div>
-        <button aria-label={"Close cart preview"} onClick={handleHideCartModal}>
-          x
+    <motion.div
+      className={`
+      ${styles["modal-overlay"]}
+      ${modalOpenStyle}
+      `}
+      onClick={handleHideCartModal}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className={`
+          ${styles["container"]}
+          ${modalOpenStyle}
+          `}
+        onClick={(e) => e.stopPropagation()}
+        initial={{ x: "100%" }}
+        animate={{ x: "0%" }}
+        exit={{ x: "100%" }}
+        transition={{ type: "tween", duration: 0.5 }}
+      >
+        <button
+          className={styles["close-modal-button"]}
+          aria-label={"Close cart preview"}
+          onClick={handleHideCartModal}
+        >
+          <X />
         </button>
-        <div>
+        <div className={styles["cart-quantity-info"]}>
           Your cart contains {totalQuantity} item{itemPlural}
         </div>
-        <div>
-          <div>
+        <div className={styles["cart-content"]}>
+          <div className={styles["subtotal-info"]}>
             <p>Order Subtotal</p>
-            <p>${orderSubtotal}</p>
+            <p className={styles["subtotal"]}>${orderSubtotal}</p>
           </div>
-          <Link to={"/store/cart"}>View or Edit Your Cart</Link>
-          <ul>
+          <Link
+            className={styles["cart-link"]}
+            to={"/store/cart"}
+            onClick={handleHideCartModal}
+          >
+            View or Edit Your Cart
+          </Link>
+          <ul className={styles["item-list"]}>
             {cart.map((item) => (
               <CartModalItem
                 key={item.productDetails.id}
@@ -37,12 +71,13 @@ const CartModal = ({
             ))}
           </ul>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
 CartModal.propTypes = {
+  showCartModal: PropTypes.bool.isRequired,
   totalQuantity: PropTypes.number.isRequired,
   orderSubtotal: PropTypes.number.isRequired,
   cart: PropTypes.arrayOf(

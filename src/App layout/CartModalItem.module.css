@@ -1,0 +1,37 @@
+.item-card {
+  display: flex;
+  gap: var(--spacing-4);
+  background-color: var(--grey-100);
+  max-height: var(--spacing-12);
+  padding: var(--spacing-4) var(--spacing-4);
+  box-shadow: var(--shadow-2);
+}
+
+.image-container {
+  align-self: center;
+  flex-basis: var(--spacing-9);
+  height: var(--spacing-9);
+  background-color: white;
+  padding: var(--spacing-1) var(--spacing-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-image {
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-info {
+  flex: 1;
+  font-size: var(--font-size-2);
+}
+
+.title {
+  margin-bottom: var(--spacing-4);
+}
+
+.item-price {
+  color: var(--grey-800);
+}

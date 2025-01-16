@@ -5,6 +5,7 @@ import fetchProducts from "../services/fetchProducts";
 const useFetchProducts = () => {
   const { category } = useParams();
   const [productList, setProductList] = useState([]);
+  const [activeProduct, setActiveProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,6 +15,7 @@ const useFetchProducts = () => {
 
     const updateProductList = async function putFetchedDataToProductList() {
       setLoading(true);
+      setActiveProduct(null);
 
       try {
         const updatedProductList = await fetchProducts(category, signal);
@@ -40,8 +42,10 @@ const useFetchProducts = () => {
 
   return {
     productList,
+    activeProduct,
     loading,
     error,
+    setActiveProduct,
   };
 };
 

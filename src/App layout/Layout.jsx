@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
+import Header from "./Header";
 import CartModal from "./CartModal";
 
 const Layout = () => {
@@ -27,8 +28,15 @@ const Layout = () => {
     Math.round(nonFormattedOrderSubtotal + "e2") + "e-2"
   );
 
-  const handleShowCartModal = () => setShowCartModal(true);
-  const handleHideCartModal = () => setShowCartModal(false);
+  const handleShowCartModal = () => {
+    document.body.style.overflow = "hidden";
+    setShowCartModal(true);
+  };
+
+  const handleHideCartModal = () => {
+    document.body.style.overflow = "";
+    setShowCartModal(false);
+  };
 
   return (
     <>
@@ -39,14 +47,17 @@ const Layout = () => {
       <Outlet
         context={{ cart, setCart, itemNumber, totalQuantity, orderSubtotal }}
       />
-      {showCartModal && (
-        <CartModal
-          totalQuantity={totalQuantity}
-          orderSubtotal={orderSubtotal}
-          cart={cart}
-          handleHideCartModal={handleHideCartModal}
-        />
-      )}
+      <AnimatePresence>
+        {showCartModal && (
+          <CartModal
+            showCartModal={showCartModal}
+            totalQuantity={totalQuantity}
+            orderSubtotal={orderSubtotal}
+            cart={cart}
+            handleHideCartModal={handleHideCartModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };

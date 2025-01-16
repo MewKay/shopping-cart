@@ -2,22 +2,42 @@
 
 exports[`Header component > renders the brand name and the nav links 1`] = `
 <div>
-  <header>
-    <h1>
+  <header
+    class="_container_824f80"
+  >
+    <h1
+      class="_brandname_824f80"
+    >
       My Shop App
     </h1>
-    <nav>
+    <nav
+      class="_navigation_824f80"
+    >
       <a
+        class="
+            _nav-item_824f80
+            _selected_824f80
+            "
         href="/"
       >
         Home
       </a>
       <a
+        class="
+            _nav-item_824f80
+            
+            "
         href="/store"
       >
         Store
       </a>
-      <button>
+      <button
+        class="
+            _nav-item_824f80
+            _cart-open-button_824f80
+            
+            "
+      >
         Cart(
         0
         )

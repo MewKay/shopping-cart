@@ -38,6 +38,9 @@ vi.mock("react-router-dom", async (importOriginal) => {
   };
 });
 
+// Mock browser API
+window.scrollTo = vi.fn();
+
 //Component props
 const product = {
   id: 3,
