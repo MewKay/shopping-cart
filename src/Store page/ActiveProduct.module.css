@@ -3,7 +3,7 @@
   display: flex;
   padding: var(--spacing-3) var(--spacing-4);
   gap: var(--spacing-5);
-  margin-bottom: var(--spacing-7);
+  padding-bottom: var(--spacing-7);
 }
 
 .image-container {

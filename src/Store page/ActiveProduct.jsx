@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { CircleX, Minus, Plus, ShoppingCart } from "lucide-react";
+import { motion } from "motion/react";
 import styles from "./ActiveProduct.module.css";
 
 const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
@@ -48,57 +49,65 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
   };
 
   return (
-    <div className={styles["container"]}>
-      <div className={styles["image-container"]}>
-        <img src={image} alt="" className={styles["product-preview"]} />
-      </div>
-      <div className={styles["product-info"]}>
-        <h3 className={styles["title"]}>{title}</h3>
-        <p className={styles["description"]}>{description}</p>
-        <p className={styles["price"]}>${price}</p>
-        <div className={styles["quantity-container"]}>
-          <button
-            aria-label="Increase quantity"
-            onClick={handleIncreaseQuantity}
-            className={styles["add-button"]}
-          >
-            <Plus />
-          </button>
-          <input
-            aria-label="Quantity value"
-            type="number"
-            min={1}
-            max={999}
-            value={productQuantity}
-            onChange={handleTypeQuantity}
-            className={styles["quantity-input"]}
-          />
-          <button
-            aria-label="Decrease quantity"
-            onClick={handleDecreaseQuantity}
-            className={styles["subtract-button"]}
-          >
-            <Minus />
-          </button>
+    <motion.div
+      initial={{ clipPath: "inset(0 0 100% 0)", height: 0 }}
+      animate={{ clipPath: "inset(0)", height: "auto" }}
+      exit={{ clipPath: "inset(0 0 100% 0)", height: 0 }}
+      transition={{ type: "tween", duration: 0.3 }}
+      className={styles["animation-wrapper"]}
+    >
+      <div className={styles["container"]}>
+        <div className={styles["image-container"]}>
+          <img src={image} alt="" className={styles["product-preview"]} />
         </div>
-        <div className={styles["add-cart-container"]}>
-          <button
-            onClick={handleAddItemToCart}
-            className={styles["add-cart-button"]}
-          >
-            Add to cart
-            <ShoppingCart />
-          </button>
+        <div className={styles["product-info"]}>
+          <h3 className={styles["title"]}>{title}</h3>
+          <p className={styles["description"]}>{description}</p>
+          <p className={styles["price"]}>${price}</p>
+          <div className={styles["quantity-container"]}>
+            <button
+              aria-label="Increase quantity"
+              onClick={handleIncreaseQuantity}
+              className={styles["add-button"]}
+            >
+              <Plus />
+            </button>
+            <input
+              aria-label="Quantity value"
+              type="number"
+              min={1}
+              max={999}
+              value={productQuantity}
+              onChange={handleTypeQuantity}
+              className={styles["quantity-input"]}
+            />
+            <button
+              aria-label="Decrease quantity"
+              onClick={handleDecreaseQuantity}
+              className={styles["subtract-button"]}
+            >
+              <Minus />
+            </button>
+          </div>
+          <div className={styles["add-cart-container"]}>
+            <button
+              onClick={handleAddItemToCart}
+              className={styles["add-cart-button"]}
+            >
+              Add to cart
+              <ShoppingCart />
+            </button>
+          </div>
         </div>
+        <button
+          aria-label="Close selected product"
+          onClick={handleCloseSelectedItem}
+          className={styles["close-button"]}
+        >
+          <CircleX />
+        </button>
       </div>
-      <button
-        aria-label="Close selected product"
-        onClick={handleCloseSelectedItem}
-        className={styles["close-button"]}
-      >
-        <CircleX />
-      </button>
-    </div>
+    </motion.div>
   );
 };
 

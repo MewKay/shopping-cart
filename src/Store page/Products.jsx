@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import ProductCard from "./ProductCard";
-import fetchProducts from "../fetchProducts";
 import { useNavigate, useParams } from "react-router-dom";
+import { AnimatePresence } from "motion/react";
+import fetchProducts from "../fetchProducts";
 import ActiveProduct from "./ActiveProduct";
+import ProductCard from "./ProductCard";
 import styles from "./Products.module.css";
 import { AlertTriangle } from "lucide-react";
 
@@ -32,6 +33,7 @@ const Products = () => {
 
   useEffect(() => {
     const updateProductList = async function putFetchedDataToProductList() {
+      setActiveProduct(null);
       setLoading(true);
       try {
         const updatedProductList = await fetchProducts(category);
@@ -53,7 +55,20 @@ const Products = () => {
   };
 
   const handleCardClick = (indexToShow) => {
-    setActiveProduct(filteredProductList[indexToShow]);
+    setActiveProduct(null);
+
+    //Delay ActiveProduct render to give time for animation
+    setTimeout(() => {
+      setActiveProduct(filteredProductList[indexToShow]);
+    }, 300);
+
+    //Delay scrolling to wait for ActiveProduct rendering
+    setTimeout(() => {
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 0);
   };
 
   const handleRemoveActive = () => {
@@ -63,12 +78,14 @@ const Products = () => {
   return (
     <main className={styles["main-container"]}>
       <div className={styles["container"]}>
-        {activeProduct && (
-          <ActiveProduct
-            product={activeProduct}
-            onRemoveActiveProduct={handleRemoveActive}
-          />
-        )}
+        <AnimatePresence>
+          {activeProduct && (
+            <ActiveProduct
+              product={activeProduct}
+              onRemoveActiveProduct={handleRemoveActive}
+            />
+          )}
+        </AnimatePresence>
         <div className={styles["products-list-header"]}>
           <ul className={styles["category-filter"]}>
             <li>
