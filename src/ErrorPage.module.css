@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-code {
+  font-size: var(--font-size-11);
+}
+
+.message {
+  font-size: var(--font-size-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.home-link {
+  font-size: var(--font-size-5);
+  color: var(--primary-500);
+  text-underline-offset: var(--spacing-2);
+}

@@ -3,6 +3,7 @@ import Layout from "./App layout/Layout";
 import Products from "./Store page/Products";
 import Store from "./Store page/Store";
 import Cart from "./Cart page/Cart";
+import ErrorPage from "./ErrorPage";
 
 const routes = [
   {
@@ -23,6 +24,7 @@ const routes = [
         element: <Cart />,
       },
     ],
+    errorElement: <ErrorPage />,
   },
 ];
 
