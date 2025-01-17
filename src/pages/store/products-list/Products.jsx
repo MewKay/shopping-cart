@@ -11,7 +11,12 @@ const Products = () => {
     useFetchProducts();
   const [searchedProduct, setSearchedProduct] = useState("");
 
-  const searchedPattern = new RegExp(searchedProduct, "i");
+  // Escape input to avoid errors as RegExp
+  const escapedSearchedProduct = searchedProduct.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&"
+  );
+  const searchedPattern = new RegExp(escapedSearchedProduct, "i");
   const filteredProductList = productList.filter((product) =>
     searchedPattern.test(product.title)
   );
