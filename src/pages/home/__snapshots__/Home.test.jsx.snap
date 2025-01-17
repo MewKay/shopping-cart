@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home component > renders welcome title, store description and going to store link 1`] = `
+<div>
+  <main
+    class="_main-container_c7ee54"
+  >
+    <h2
+      class="_hero-head_c7ee54"
+    >
+      Welcome to our store!
+    </h2>
+    <p
+      class="_hero-intro_c7ee54"
+    >
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus autem itaque corporis vitae id vero quaerat possimus nisi neque alias?
+    </p>
+    <a
+      class="_store-link_c7ee54"
+      href="/store"
+    >
+      <p
+        class="_link-text_c7ee54"
+      >
+        Go to store
+      </p>
+      <svg
+        class="lucide lucide-arrow-right _link-icon_c7ee54"
+        fill="none"
+        height="28"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="28"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="m12 5 7 7-7 7"
+        />
+      </svg>
+    </a>
+  </main>
+</div>
+`;

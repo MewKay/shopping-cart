@@ -1,0 +1,111 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartModal component > renders correctly 1`] = `
+<div>
+  <div
+    class="
+      _modal-overlay_56bad9
+      _open_56bad9
+      "
+    style="opacity: 0;"
+  >
+    <div
+      class="
+          _container_56bad9
+          _open_56bad9
+          "
+      style="transform: translateX(100%);"
+    >
+      <button
+        aria-label="Close cart preview"
+        class="_close-modal-button_56bad9"
+      >
+        <svg
+          class="lucide lucide-x"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6 6 18"
+          />
+          <path
+            d="m6 6 12 12"
+          />
+        </svg>
+      </button>
+      <div
+        class="_cart-quantity-info_56bad9"
+      >
+        Your cart contains 
+        10
+         item
+        s
+      </div>
+      <div
+        class="_cart-content_56bad9"
+      >
+        <div
+          class="_subtotal-info_56bad9"
+        >
+          <p>
+            Order Subtotal
+          </p>
+          <p
+            class="_subtotal_56bad9"
+          >
+            $
+            352.45
+          </p>
+        </div>
+        <a
+          class="_cart-link_56bad9"
+          href="/store/cart"
+        >
+          View or Edit Your Cart
+        </a>
+        <ul
+          class="_item-list_56bad9"
+        >
+          <li>
+            <img
+              alt=""
+              src="https://image.placeholder.com/product"
+            />
+            <p>
+              Product 0
+            </p>
+            <p>
+              49.5
+            </p>
+            <p>
+              5
+            </p>
+          </li>
+          <li>
+            <img
+              alt=""
+              src="https://image.placeholder.com/product"
+            />
+            <p>
+              Product 1
+            </p>
+            <p>
+              20.99
+            </p>
+            <p>
+              5
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

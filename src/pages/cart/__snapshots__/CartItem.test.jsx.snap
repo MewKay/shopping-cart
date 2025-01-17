@@ -1,0 +1,122 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartItem component > renders correctly 1`] = `
+<div>
+  <div
+    class="_details-container_54f01f"
+  >
+    <div
+      class="_image-container_54f01f"
+    >
+      <img
+        alt=""
+        class="_image-product_54f01f"
+        src="https://image.placeholder.com/product"
+      />
+    </div>
+    <div
+      class="_details-info_54f01f"
+    >
+      <p
+        class="_details-title_54f01f"
+      >
+        Product 0
+      </p>
+      <p
+        class="_details-category_54f01f"
+      >
+        Category: 
+        jewelery
+      </p>
+    </div>
+  </div>
+  <div
+    class="_quantity-container_54f01f"
+  >
+    <button
+      aria-label="Increase quantity"
+      class="_add-button_54f01f"
+    >
+      <svg
+        class="lucide lucide-plus"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+        <path
+          d="M12 5v14"
+        />
+      </svg>
+    </button>
+    <input
+      aria-label="Quantity value"
+      class="_quantity-input_54f01f"
+      min="1"
+      type="number"
+      value="4"
+    />
+    <button
+      aria-label="Decrease quantity"
+      class="_subtract-button_54f01f"
+    >
+      <svg
+        class="lucide lucide-minus"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 12h14"
+        />
+      </svg>
+    </button>
+  </div>
+  <div>
+    $
+    50
+  </div>
+  <div>
+    $
+    200
+  </div>
+  <button
+    aria-label="Remove item from cart"
+    class="_remove-item_54f01f"
+  >
+    <svg
+      class="lucide lucide-x"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;

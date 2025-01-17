@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header component > renders the brand name and the nav links 1`] = `
+<div>
+  <header
+    class="_container_f858e4"
+  >
+    <h1
+      class="_brandname_f858e4"
+    >
+      My Shop App
+    </h1>
+    <nav
+      class="_navigation_f858e4"
+    >
+      <a
+        class="
+            _nav-item_f858e4
+            _selected_f858e4
+            "
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="
+            _nav-item_f858e4
+            
+            "
+        href="/store"
+      >
+        Store
+      </a>
+      <button
+        class="
+            _nav-item_f858e4
+            _cart-open-button_f858e4
+            
+            "
+      >
+        Cart(
+        0
+        )
+      </button>
+    </nav>
+  </header>
+</div>
+`;

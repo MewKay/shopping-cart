@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CartModalItem component > renders correctly 1`] = `
+<div>
+  <li
+    class="_item-card_3ee9f7"
+  >
+    <div
+      class="_image-container_3ee9f7"
+    >
+      <img
+        alt=""
+        class="_item-image_3ee9f7"
+        src="https://image.placeholder.com/product"
+      />
+    </div>
+    <div
+      class="_item-info_3ee9f7"
+    >
+      <p
+        class="_title_3ee9f7"
+      >
+        Product 0
+      </p>
+      <p
+        class="_item-price_3ee9f7"
+      >
+        5
+         x $
+        49.5
+      </p>
+    </div>
+  </li>
+</div>
+`;
