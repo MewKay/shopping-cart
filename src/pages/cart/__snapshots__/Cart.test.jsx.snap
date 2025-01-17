@@ -315,24 +315,24 @@ exports[`Cart component > renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="_summary-container_a5fe19"
+        class="_summary-container_83e938"
       >
         <h3
-          class="_summary-title_a5fe19"
+          class="_summary-title_83e938"
         >
           Order Summary
         </h3>
         <div
-          class="_summary-info_a5fe19"
+          class="_summary-info_83e938"
         >
           <div>
             <p
-              class="_summary-labels_a5fe19"
+              class="_summary-labels_83e938"
             >
               SUBTOTAL
             </p>
             <p
-              class="_summary-prices_a5fe19"
+              class="_summary-prices_83e938"
             >
               $
               352.45
@@ -340,12 +340,12 @@ exports[`Cart component > renders correctly 1`] = `
           </div>
           <div>
             <p
-              class="_summary-labels_a5fe19"
+              class="_summary-labels_83e938"
             >
               DELIVERY
             </p>
             <p
-              class="_summary-prices_a5fe19"
+              class="_summary-prices_83e938"
             >
               $
               0
@@ -353,34 +353,34 @@ exports[`Cart component > renders correctly 1`] = `
           </div>
           <div>
             <p
-              class="_summary-labels_a5fe19"
+              class="_summary-labels_83e938"
             >
               DISCOUNT
             </p>
             <p
-              class="_summary-prices_a5fe19"
+              class="_summary-prices_83e938"
             >
               $
               0
             </p>
           </div>
           <div
-            class="_total-container_a5fe19"
+            class="_total-container_83e938"
           >
             <p
-              class="_summary-labels_a5fe19"
+              class="_summary-labels_83e938"
             >
               TOTAL
             </p>
             <p
-              class="_summary-prices_a5fe19"
+              class="_summary-prices_83e938"
             >
               $
               352.45
             </p>
           </div>
           <button
-            class="_checkout-button_a5fe19"
+            class="_checkout-button_83e938"
           >
             CHECKOUT
           </button>
