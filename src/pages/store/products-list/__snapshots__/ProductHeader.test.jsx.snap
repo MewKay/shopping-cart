@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductHeader > renders correctly 1`] = `
+<div>
+  <div
+    class="_products-list-header_772fc5"
+  >
+    <ul
+      class="_category-filter_772fc5"
+    >
+      <li>
+        <a
+          class=""
+          href="/store/all"
+        >
+          All
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/store/men's clothing"
+        >
+          Men's Clothing
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/store/women's clothing"
+        >
+          Women's Clothing
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/store/jewelery"
+        >
+          Jewelery
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/store/electronics"
+        >
+          Electronics
+        </a>
+      </li>
+    </ul>
+    <input
+      class="_search-product_772fc5"
+      placeholder="Search for a product..."
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

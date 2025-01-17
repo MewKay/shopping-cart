@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import useFetchProducts from "../../../hooks/useFetchProducts";
 import { AlertTriangle } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import ActiveProduct from "./ActiveProduct";
 import ProductCard from "./ProductCard";
 import styles from "./Products.module.css";
+import ProductHeader from "./ProductHeader";
 
 const Products = () => {
-  const { category } = useParams();
   const { productList, activeProduct, loading, error, setActiveProduct } =
     useFetchProducts();
-  const navigate = useNavigate();
   const [searchedProduct, setSearchedProduct] = useState("");
 
   const searchedPattern = new RegExp(searchedProduct, "i");
@@ -21,14 +19,9 @@ const Products = () => {
   const isThereNoProducts =
     searchedProduct !== "" && filteredProductList.length <= 0;
 
-  const allFilterActive = category === "all" ? styles["active"] : "";
-  const menClothingFilterActive =
-    category === "men's clothing" ? styles["active"] : "";
-  const womenClothingFilterActive =
-    category === "women's clothing" ? styles["active"] : "";
-  const jeweleryFilterActive = category === "jewelery" ? styles["active"] : "";
-  const electronicsFilterActive =
-    category === "electronics" ? styles["active"] : "";
+  const handleRemoveActive = () => {
+    setActiveProduct(null);
+  };
 
   const handleSearchChange = (e) => {
     setSearchedProduct(e.target.value);
@@ -51,10 +44,6 @@ const Products = () => {
     }, 0);
   };
 
-  const handleRemoveActive = () => {
-    setActiveProduct(null);
-  };
-
   return (
     <main className={styles["main-container"]}>
       <div className={styles["container"]}>
@@ -66,61 +55,12 @@ const Products = () => {
             />
           )}
         </AnimatePresence>
-        <div className={styles["products-list-header"]}>
-          <ul className={styles["category-filter"]}>
-            <li>
-              <button
-                onClick={() => navigate("../all", { relative: "path" })}
-                className={allFilterActive}
-              >
-                All
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() =>
-                  navigate("../men's clothing", { relative: "path" })
-                }
-                className={menClothingFilterActive}
-              >
-                Men&apos;s Clothing
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() =>
-                  navigate("../women's clothing", { relative: "path" })
-                }
-                className={womenClothingFilterActive}
-              >
-                Women&apos;s Clothing
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => navigate("../jewelery", { relative: "path" })}
-                className={jeweleryFilterActive}
-              >
-                Jewelery
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => navigate("../electronics", { relative: "path" })}
-                className={electronicsFilterActive}
-              >
-                Electronics
-              </button>
-            </li>
-          </ul>
-          <input
-            className={styles["search-product"]}
-            type="text"
-            placeholder="Search for a product..."
-            value={searchedProduct}
-            onChange={handleSearchChange}
-          />
-        </div>
+
+        <ProductHeader
+          searchedProduct={searchedProduct}
+          onSearchChange={handleSearchChange}
+        />
+
         <div className={styles["list-content"]}>
           {loading ? (
             <p>Loading...</p>

@@ -37,7 +37,7 @@ const assertProductsLength = async function assertProductCardsLengthByCategory(
   categoryFilter,
   expectedLength
 ) {
-  const filterButton = screen.getByRole("button", {
+  const filterButton = screen.getByRole("link", {
     name: categoryFilter,
   });
   await user.click(filterButton);
@@ -51,7 +51,7 @@ const assertProductsTitle = async function assertProductCardsTitleByCategory(
   categoryFilter,
   ...expectedTitles
 ) {
-  const filterButton = screen.getByRole("button", {
+  const filterButton = screen.getByRole("link", {
     name: categoryFilter,
   });
   await user.click(filterButton);
@@ -158,7 +158,7 @@ describe("Products Component", () => {
       const user = userEvent.setup();
       render(<RouterProvider router={router} />);
 
-      const filterButton = screen.getByRole("button", {
+      const filterButton = screen.getByRole("link", {
         name: "Electronics",
       });
       await user.click(filterButton);
