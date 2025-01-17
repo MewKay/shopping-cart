@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import { CircleX, Minus, Plus, ShoppingCart } from "lucide-react";
+import { CircleX, ShoppingCart } from "lucide-react";
 import { motion } from "motion/react";
 import styles from "./ActiveProduct.module.css";
+import QuantitySelector from "../../../../components/quantity-selector/QuantitySelector";
 
 const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
   const { cart, setCart } = useOutletContext();
@@ -32,7 +33,7 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
     );
 
     if (indexItemToAdd >= 0) {
-      newCart[indexItemToAdd].quantity += productQuantity;
+      newCart[indexItemToAdd].quantity += Number.parseInt(productQuantity);
     } else {
       newCart.push({
         productDetails: product,
@@ -64,31 +65,12 @@ const ActiveProduct = ({ product, onRemoveActiveProduct }) => {
           <h3 className={styles["title"]}>{title}</h3>
           <p className={styles["description"]}>{description}</p>
           <p className={styles["price"]}>${price}</p>
-          <div className={styles["quantity-container"]}>
-            <button
-              aria-label="Increase quantity"
-              onClick={handleIncreaseQuantity}
-              className={styles["add-button"]}
-            >
-              <Plus />
-            </button>
-            <input
-              aria-label="Quantity value"
-              type="number"
-              min={1}
-              max={999}
-              value={productQuantity}
-              onChange={handleTypeQuantity}
-              className={styles["quantity-input"]}
-            />
-            <button
-              aria-label="Decrease quantity"
-              onClick={handleDecreaseQuantity}
-              className={styles["subtract-button"]}
-            >
-              <Minus />
-            </button>
-          </div>
+          <QuantitySelector
+            productQuantity={productQuantity}
+            onIncreaseQuantity={handleIncreaseQuantity}
+            onTypeQuantity={handleTypeQuantity}
+            onDecreaseQuantity={handleDecreaseQuantity}
+          />
           <div className={styles["add-cart-container"]}>
             <button
               onClick={handleAddItemToCart}

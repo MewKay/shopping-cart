@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import { Minus, Plus, X } from "lucide-react";
+import { X } from "lucide-react";
 import styles from "./CartItem.module.css";
+import QuantitySelector from "../../components/quantity-selector/QuantitySelector";
 
 const CartItem = ({ cartItem, cartItemIndex }) => {
   const { cart, setCart } = useOutletContext();
@@ -79,30 +80,12 @@ const CartItem = ({ cartItem, cartItemIndex }) => {
           <p className={styles["details-category"]}>Category: {category}</p>
         </div>
       </div>
-      <div className={styles["quantity-container"]}>
-        <button
-          aria-label="Increase quantity"
-          onClick={handleIncreaseQuantity}
-          className={styles["add-button"]}
-        >
-          <Plus />
-        </button>
-        <input
-          aria-label="Quantity value"
-          type="number"
-          min={1}
-          value={productQuantity}
-          onChange={handleTypeQuantity}
-          className={styles["quantity-input"]}
-        />
-        <button
-          aria-label="Decrease quantity"
-          onClick={handleDecreaseQuantity}
-          className={styles["subtract-button"]}
-        >
-          <Minus />
-        </button>
-      </div>
+      <QuantitySelector
+        productQuantity={productQuantity}
+        onIncreaseQuantity={handleIncreaseQuantity}
+        onTypeQuantity={handleTypeQuantity}
+        onDecreaseQuantity={handleDecreaseQuantity}
+      />
       <div>${price}</div>
       <div>${totalItemPrice}</div>
       <button

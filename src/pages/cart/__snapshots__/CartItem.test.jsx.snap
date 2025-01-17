@@ -31,11 +31,11 @@ exports[`CartItem component > renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="_quantity-container_54f01f"
+    class="_quantity-container_0eb3ba"
   >
     <button
       aria-label="Increase quantity"
-      class="_add-button_54f01f"
+      class="_add-button_0eb3ba"
     >
       <svg
         class="lucide lucide-plus"
@@ -59,14 +59,15 @@ exports[`CartItem component > renders correctly 1`] = `
     </button>
     <input
       aria-label="Quantity value"
-      class="_quantity-input_54f01f"
+      class="_quantity-input_0eb3ba"
+      max="999"
       min="1"
       type="number"
       value="4"
     />
     <button
       aria-label="Decrease quantity"
-      class="_subtract-button_54f01f"
+      class="_subtract-button_0eb3ba"
     >
       <svg
         class="lucide lucide-minus"

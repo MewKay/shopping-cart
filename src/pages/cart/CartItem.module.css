@@ -32,24 +32,6 @@
   color: var(--grey-600);
 }
 
-.quantity-container {
-  composes: quantity-container from "../store/products-list/ActiveProduct.module.css";
-  justify-self: center;
-  margin-bottom: 0;
-}
-
-.add-button {
-  composes: add-button from "../store/products-list/ActiveProduct.module.css";
-}
-
-.subtract-button {
-  composes: subtract-button from "../store/products-list/ActiveProduct.module.css";
-}
-
-.quantity-input {
-  composes: quantity-input from "../store/products-list/ActiveProduct.module.css";
-}
-
 .remove-item {
   display: flex;
   justify-content: center;
