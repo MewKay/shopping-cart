@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { X } from "lucide-react";
 import styles from "./CartItem.module.css";
-import QuantitySelector from "../../components/quantity-selector/QuantitySelector";
+import QuantitySelector from "../../../components/quantity-selector/QuantitySelector";
 
 const CartItem = ({ cartItem, cartItemIndex }) => {
   const { cart, setCart } = useOutletContext();

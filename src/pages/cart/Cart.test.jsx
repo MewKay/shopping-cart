@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { screen, render } from "@testing-library/react";
 import Cart from "./Cart";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, useOutletContext } from "react-router-dom";
 
 //Mock Outlet Context
 let itemNumber = 3;
@@ -58,6 +58,20 @@ describe("Cart component", () => {
     const { container } = render(<Cart />, { wrapper: MemoryRouter });
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("show message when cart is empty", () => {
+    vi.mocked(useOutletContext).mockImplementationOnce(() => ({
+      itemNumber,
+      orderSubtotal,
+      cart: [],
+    }));
+
+    render(<Cart />, { wrapper: MemoryRouter });
+
+    const emptyCartMessage = screen.getByText(/Your Cart is empty/i);
+
+    expect(emptyCartMessage).toBeInTheDocument();
   });
 
   it("adds plural on 'item' text if more than 1", () => {
