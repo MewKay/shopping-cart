@@ -3,10 +3,10 @@
 exports[`ProductHeader > renders correctly 1`] = `
 <div>
   <div
-    class="_products-list-header_772fc5"
+    class="_products-list-header_0ab285"
   >
     <ul
-      class="_category-filter_772fc5"
+      class="_category-filter_0ab285"
     >
       <li>
         <a
@@ -50,7 +50,7 @@ exports[`ProductHeader > renders correctly 1`] = `
       </li>
     </ul>
     <input
-      class="_search-product_772fc5"
+      class="_search-product_0ab285"
       placeholder="Search for a product..."
       type="text"
       value=""

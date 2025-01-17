@@ -3,16 +3,16 @@
 exports[`ProductListContent > renders correctly 1`] = `
 <div>
   <div
-    class="_list-content_acec47"
+    class="_list-content_6eac38"
   >
     <div
-      class="_products-list_acec47"
+      class="_products-list_6eac38"
     >
       <button
-        class="_container_1a2121"
+        class="_container_454344"
       >
         <div
-          class="_product-image_1a2121"
+          class="_product-image_454344"
         >
           <img
             alt=""
@@ -20,22 +20,22 @@ exports[`ProductListContent > renders correctly 1`] = `
           />
         </div>
         <p
-          class="_item-title_1a2121"
+          class="_item-title_454344"
         >
           Product 0
         </p>
         <p
-          class="_item-price_1a2121"
+          class="_item-price_454344"
         >
           $
           49.5
         </p>
       </button>
       <button
-        class="_container_1a2121"
+        class="_container_454344"
       >
         <div
-          class="_product-image_1a2121"
+          class="_product-image_454344"
         >
           <img
             alt=""
@@ -43,22 +43,22 @@ exports[`ProductListContent > renders correctly 1`] = `
           />
         </div>
         <p
-          class="_item-title_1a2121"
+          class="_item-title_454344"
         >
           Product 1
         </p>
         <p
-          class="_item-price_1a2121"
+          class="_item-price_454344"
         >
           $
           22.5
         </p>
       </button>
       <button
-        class="_container_1a2121"
+        class="_container_454344"
       >
         <div
-          class="_product-image_1a2121"
+          class="_product-image_454344"
         >
           <img
             alt=""
@@ -66,12 +66,12 @@ exports[`ProductListContent > renders correctly 1`] = `
           />
         </div>
         <p
-          class="_item-title_1a2121"
+          class="_item-title_454344"
         >
           Product 2
         </p>
         <p
-          class="_item-price_1a2121"
+          class="_item-price_454344"
         >
           $
           10.99

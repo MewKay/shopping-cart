@@ -3,10 +3,10 @@
 exports[`ProductCard component > renders correctly 1`] = `
 <div>
   <button
-    class="_container_1a2121"
+    class="_container_454344"
   >
     <div
-      class="_product-image_1a2121"
+      class="_product-image_454344"
     >
       <img
         alt=""
@@ -14,12 +14,12 @@ exports[`ProductCard component > renders correctly 1`] = `
       />
     </div>
     <p
-      class="_item-title_1a2121"
+      class="_item-title_454344"
     >
       Product 0
     </p>
     <p
-      class="_item-price_1a2121"
+      class="_item-price_454344"
     >
       $
       50

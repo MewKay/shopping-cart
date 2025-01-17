@@ -3,46 +3,46 @@
 exports[`ActiveProduct component > renders correctly 1`] = `
 <div>
   <div
-    class="_animation-wrapper_371ebe"
+    class="_animation-wrapper_51ac2f"
     style="clip-path: inset(0 0 100% 0); height: 0px;"
   >
     <div
-      class="_container_371ebe"
+      class="_container_51ac2f"
     >
       <div
-        class="_image-container_371ebe"
+        class="_image-container_51ac2f"
       >
         <img
           alt=""
-          class="_product-preview_371ebe"
+          class="_product-preview_51ac2f"
           src="https://image.placeholder.com/product"
         />
       </div>
       <div
-        class="_product-info_371ebe"
+        class="_product-info_51ac2f"
       >
         <h3
-          class="_title_371ebe"
+          class="_title_51ac2f"
         >
           Product 0
         </h3>
         <p
-          class="_description_371ebe"
+          class="_description_51ac2f"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam asperiores minus dolores cumque corporis vel dolorem atque non reiciendis.
         </p>
         <p
-          class="_price_371ebe"
+          class="_price_51ac2f"
         >
           $
           50
         </p>
         <div
-          class="_quantity-container_371ebe"
+          class="_quantity-container_51ac2f"
         >
           <button
             aria-label="Increase quantity"
-            class="_add-button_371ebe"
+            class="_add-button_51ac2f"
           >
             <svg
               class="lucide lucide-plus"
@@ -66,7 +66,7 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           </button>
           <input
             aria-label="Quantity value"
-            class="_quantity-input_371ebe"
+            class="_quantity-input_51ac2f"
             max="999"
             min="1"
             type="number"
@@ -74,7 +74,7 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           />
           <button
             aria-label="Decrease quantity"
-            class="_subtract-button_371ebe"
+            class="_subtract-button_51ac2f"
           >
             <svg
               class="lucide lucide-minus"
@@ -95,10 +95,10 @@ exports[`ActiveProduct component > renders correctly 1`] = `
           </button>
         </div>
         <div
-          class="_add-cart-container_371ebe"
+          class="_add-cart-container_51ac2f"
         >
           <button
-            class="_add-cart-button_371ebe"
+            class="_add-cart-button_51ac2f"
           >
             Add to cart
             <svg
@@ -132,7 +132,7 @@ exports[`ActiveProduct component > renders correctly 1`] = `
       </div>
       <button
         aria-label="Close selected product"
-        class="_close-button_371ebe"
+        class="_close-button_51ac2f"
       >
         <svg
           class="lucide lucide-circle-x"

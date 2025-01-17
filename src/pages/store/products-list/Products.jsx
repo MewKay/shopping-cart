@@ -1,9 +1,9 @@
 import { useState } from "react";
 import useFetchProducts from "../../../hooks/useFetchProducts";
 import { AnimatePresence } from "motion/react";
-import ActiveProduct from "./ActiveProduct";
-import ProductHeader from "./ProductHeader";
-import ProductListContent from "./ProductListContent";
+import ActiveProduct from "./active-product/ActiveProduct";
+import ProductHeader from "./product-header/ProductHeader";
+import ProductListContent from "./product-list-content/ProductListContent";
 import styles from "./Products.module.css";
 
 const Products = () => {

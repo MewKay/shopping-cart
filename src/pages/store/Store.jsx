@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./Store.module.css";
 import { CircuitBoard, Gem, Icon, MoveRight, Shirt } from "lucide-react";
 import { dress } from "@lucide/lab";
+import styles from "./Store.module.css";
 
 const Store = function createStoreComponent() {
   return (

@@ -28,7 +28,7 @@ vi.mock("../../../services/fetchProducts.js", () => ({
   }),
 }));
 
-vi.mock("./ProductCard", () => ({
+vi.mock("./product-list-content/ProductCard", () => ({
   default: ({ title }) => <li>{title}</li>,
 }));
 
