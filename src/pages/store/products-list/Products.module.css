@@ -11,32 +11,3 @@
   box-shadow: var(--shadow-5);
   width: var(--spacing-17);
 }
-
-.alert-message {
-  display: flex;
-  gap: var(--spacing-2);
-  background-color: var(--accent-2-100);
-  color: var(--accent-2-900);
-  border: solid 2px var(--accent-2-800);
-  font-weight: bold;
-  padding: var(--spacing-2) var(--spacing-5);
-  margin: var(--spacing-5);
-}
-
-.list-content {
-  display: flex;
-  justify-content: center;
-}
-
-.list-content > p {
-  margin-top: var(--spacing-4);
-  font-size: var(--font-size-4);
-  color: var(--grey-800);
-}
-
-.products-list {
-  display: grid;
-  grid-template-columns: repeat(4, var(--spacing-11));
-  gap: var(--spacing-6);
-  padding-left: 0;
-}

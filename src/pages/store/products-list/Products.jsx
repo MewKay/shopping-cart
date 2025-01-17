@@ -1,11 +1,10 @@
 import { useState } from "react";
 import useFetchProducts from "../../../hooks/useFetchProducts";
-import { AlertTriangle } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import ActiveProduct from "./ActiveProduct";
-import ProductCard from "./ProductCard";
-import styles from "./Products.module.css";
 import ProductHeader from "./ProductHeader";
+import ProductListContent from "./ProductListContent";
+import styles from "./Products.module.css";
 
 const Products = () => {
   const { productList, activeProduct, loading, error, setActiveProduct } =
@@ -61,37 +60,13 @@ const Products = () => {
           onSearchChange={handleSearchChange}
         />
 
-        <div className={styles["list-content"]}>
-          {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <div className={styles["alert-message"]}>
-              <AlertTriangle />
-              <p>Failed to load products. Please try again later.</p>
-            </div>
-          ) : isThereNoProducts ? (
-            <div className={styles["alert-message"]}>
-              <AlertTriangle />
-              <p>
-                Sorry, no products match your search. Please try adjusting your
-                filters or search terms.
-              </p>
-            </div>
-          ) : (
-            <div className={styles["products-list"]}>
-              {filteredProductList.map((product, index) => (
-                <ProductCard
-                  key={product.id}
-                  imgURL={product.image}
-                  title={product.title}
-                  price={product.price}
-                  indexToShow={index}
-                  onClick={handleCardClick}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+        <ProductListContent
+          loading={loading}
+          error={error}
+          isThereNoProducts={isThereNoProducts}
+          filteredProductList={filteredProductList}
+          onCardClick={handleCardClick}
+        />
       </div>
     </main>
   );

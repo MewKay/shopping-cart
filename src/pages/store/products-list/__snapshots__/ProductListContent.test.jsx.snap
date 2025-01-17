@@ -1,0 +1,83 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProductListContent > renders correctly 1`] = `
+<div>
+  <div
+    class="_list-content_acec47"
+  >
+    <div
+      class="_products-list_acec47"
+    >
+      <button
+        class="_container_1a2121"
+      >
+        <div
+          class="_product-image_1a2121"
+        >
+          <img
+            alt=""
+            src="https://image.placeholder.com/product"
+          />
+        </div>
+        <p
+          class="_item-title_1a2121"
+        >
+          Product 0
+        </p>
+        <p
+          class="_item-price_1a2121"
+        >
+          $
+          49.5
+        </p>
+      </button>
+      <button
+        class="_container_1a2121"
+      >
+        <div
+          class="_product-image_1a2121"
+        >
+          <img
+            alt=""
+            src="https://image.placeholder.com/product"
+          />
+        </div>
+        <p
+          class="_item-title_1a2121"
+        >
+          Product 1
+        </p>
+        <p
+          class="_item-price_1a2121"
+        >
+          $
+          22.5
+        </p>
+      </button>
+      <button
+        class="_container_1a2121"
+      >
+        <div
+          class="_product-image_1a2121"
+        >
+          <img
+            alt=""
+            src="https://image.placeholder.com/product"
+          />
+        </div>
+        <p
+          class="_item-title_1a2121"
+        >
+          Product 2
+        </p>
+        <p
+          class="_item-price_1a2121"
+        >
+          $
+          10.99
+        </p>
+      </button>
+    </div>
+  </div>
+</div>
+`;
